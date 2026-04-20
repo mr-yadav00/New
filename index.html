@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteLab India — Instagram Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #FFB800;
+    --gold2: #FFC93C;
+    --black: #080810;
+    --white: #F4F4FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    font-family: 'Outfit', sans-serif;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    text-align: center;
+    margin-bottom: 36px;
+    color: #fff;
+  }
+  .page-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+  .page-header p {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .how-to {
+    background: rgba(255,184,0,0.08);
+    border: 1px solid rgba(255,184,0,0.2);
+    border-radius: 12px;
+    padding: 14px 24px;
+    color: #aaa;
+    font-size: 0.82rem;
+    margin-top: 14px;
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .how-to strong { color: var(--gold); }
+
+  /* SLIDE WRAPPER */
+  .slide-set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .slide-label {
+    color: #555;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-left: calc(50% - 270px);
+  }
+
+  /* Each slide is 1080x1080 scaled to 540x540 for display */
+  .slide {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  /* ========== SLIDE 1 — COVER ========== */
+  .s1 {
+    background: var(--black);
+  }
+  .s1 .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,184,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,184,0,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .s1 .glow-top {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,184,0,0.13) 0%, transparent 65%);
+    top: -200px; left: 50%; transform: translateX(-50%);
+  }
+  .s1 .glow-bottom {
+    position: absolute;
+    width: 400px; height: 300px;
+    background: radial-gradient(circle, rgba(255,100,0,0.07) 0%, transparent 65%);
+    bottom: -100px; right: -100px;
+  }
+  .s1 .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px;
+    text-align: center;
+  }
+  .s1 .brand-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 28px;
+  }
+  .s1 .brand-dot {
+    width: 8px; height: 8px;
+    background: var(--gold); border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+  }
+  .s1 .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 4px;
+    color: var(--gold);
+  }
+  .s1 .divider {
+    width: 60px; height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin-bottom: 28px;
+  }
+  .s1 .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.5rem;
+    line-height: 0.88;
+    letter-spacing: 2px;
+    color: var(--white);
+  }
+  .s1 .headline .gold { color: var(--gold); }
+  .s1 .headline .outline {
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.4);
+    color: transparent;
+  }
+  .s1 .sub {
+    font-size: 0.9rem; letter-spacing: 1px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 20px;
+  }
+  .s1 .price-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: #000;
+    padding: 10px 26px; border-radius: 100px;
+    font-weight: 800; font-size: 1.1rem;
+    letter-spacing: 0.5px; margin-top: 24px;
+  }
+  .s1 .corner-tag {
+    position: absolute; bottom: 28px; right: 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; color: rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+  }
+  .s1 .swipe-hint {
+    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 6px;
+    color: rgba(255,255,255,0.25); font-size: 0.7rem; letter-spacing: 1px;
+  }
+  .s1 .slide-count {
+    position: absolute; top: 28px; right: 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; color: rgba(255,255,255,0.25); letter-spacing: 1px;
+  }
+  .s1 .deco-line {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+
+  /* ========== SLIDE 2 — PROBLEM ========== */
+  .s2 {
+    background: #07070f;
+  }
+  .s2 .noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+  .s2 .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    padding: 56px 52px;
+    justify-content: center;
+  }
+  .s2 .tag {
+    font-size: 0.68rem; letter-spacing: 3px;
+    text-transform: uppercase; color: #ff4d4d;
+    font-weight: 700; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .s2 .tag::before { content:''; width: 20px; height: 1.5px; background: #ff4d4d; }
+  .s2 .big-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.2rem; line-height: 0.9;
+    color: var(--white); letter-spacing: 1px;
+    margin-bottom: 36px;
+  }
+  .s2 .big-text .red { color: #ff4d4d; }
+  .s2 .problems { display: flex; flex-direction: column; gap: 16px; }
+  .s2 .prob-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,77,77,0.06);
+    border: 1px solid rgba(255,77,77,0.15);
+    border-radius: 12px;
+  }
+  .s2 .prob-x {
+    width: 28px; height: 28px;
+    background: rgba(255,77,77,0.15); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #ff4d4d; font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+  }
+  .s2 .prob-text { color: rgba(255,255,255,0.75); font-size: 0.92rem; line-height: 1.5; }
+  .s2 .prob-text strong { color: var(--white); }
+  .s2 .brand {
+    position: absolute; top: 28px; left: 52px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem; letter-spacing: 4px; color: rgba(255,184,0,0.4);
+  }
+  .s2 .slide-count { position: absolute; top: 28px; right: 28px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+
+  /* ========== SLIDE 3 — SOLUTION ========== */
+  .s3 { background: var(--black); }
+  .s3 .bg-circle {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,184,0,0.06);
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+  }
+  .s3 .bg-circle2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,184,0,0.1);
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+  }
+  .s3 .glow {
+    position: absolute;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(255,184,0,0.1) 0%, transparent 70%);
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+  }
+  .s3 .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px; text-align: center;
+  }
+  .s3 .tag {
+    font-size: 0.68rem; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    font-weight: 700; margin-bottom: 16px;
+  }
+  .s3 .big-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem; line-height: 0.9;
+    color: var(--white); margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .s3 .big-text .gold { color: var(--gold); }
+  .s3 .checks {
+    display: flex; flex-direction: column;
+    gap: 12px; width: 100%; max-width: 360px;
+    margin-bottom: 28px;
+  }
+  .s3 .check-row {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px; padding: 12px 18px;
+  }
+  .s3 .chk {
+    width: 24px; height: 24px;
+    background: rgba(0,230,118,0.15);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: #00e676; font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+  }
+  .s3 .chk-text { color: rgba(255,255,255,0.8); font-size: 0.88rem; text-align: left; }
+  .s3 .chk-text strong { color: var(--white); }
+  .s3 .pill {
+    background: var(--gold); color: #000;
+    padding: 10px 28px; border-radius: 100px;
+    font-weight: 800; font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+  .s3 .brand { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 4px; color: rgba(255,184,0,0.4); }
+  .s3 .slide-count { position: absolute; top: 28px; right: 28px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+
+  /* ========== SLIDE 4 — DEMOS ========== */
+  .s4 { background: #05050d; }
+  .s4 .content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    padding: 44px 48px;
+    justify-content: center;
+  }
+  .s4 .tag { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .s4 .tag::before { content:''; width: 20px; height: 1.5px; background: var(--gold); }
+  .s4 .heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.4rem; line-height: 0.9;
+    color: var(--white); margin-bottom: 30px; letter-spacing: 1px;
+  }
+  .s4 .heading .gold { color: var(--gold); }
+  .s4 .demo-list { display: flex; flex-direction: column; gap: 14px; }
+  .s4 .demo-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.07);
+    position: relative; overflow: hidden;
+  }
+  .s4 .demo-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .s4 .demo-item.gym { background: rgba(255,100,0,0.06); }
+  .s4 .demo-item.gym::before { background: #ff6400; }
+  .s4 .demo-item.hostel { background: rgba(100,200,255,0.06); }
+  .s4 .demo-item.hostel::before { background: #64c8ff; }
+  .s4 .demo-item.realestate { background: rgba(255,184,0,0.07); }
+  .s4 .demo-item.realestate::before { background: var(--gold); }
+  .s4 .demo-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .s4 .demo-info h3 { color: var(--white); font-size: 0.95rem; font-weight: 700; }
+  .s4 .demo-info p { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 2px; }
+  .s4 .demo-arrow {
+    margin-left: auto;
+    color: rgba(255,255,255,0.2); font-size: 1rem;
+  }
+  .s4 .bio-note {
+    margin-top: 20px;
+    font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    display: flex; align-items: center; gap: 6px;
+    letter-spacing: 0.5px;
+  }
+  .s4 .brand { position: absolute; top: 28px; left: 48px; font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 4px; color: rgba(255,184,0,0.4); }
+  .s4 .slide-count { position: absolute; top: 28px; right: 28px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+
+  /* ========== SLIDE 5 — PRICING ========== */
+  .s5 { background: var(--black); }
+  .s5 .glow { position: absolute; width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(255,184,0,0.08) 0%, transparent 65%); bottom: -100px; left: 50%; transform: translateX(-50%); }
+  .s5 .content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 36px; text-align: center; }
+  .s5 .tag { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; }
+  .s5 .heading { font-family: 'Bebas Neue', sans-serif; font-size: 3.6rem; line-height: 0.9; color: var(--white); margin-bottom: 28px; letter-spacing: 1px; }
+  .s5 .heading .gold { color: var(--gold); }
+  .s5 .plans { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; width: 100%; margin-bottom: 20px; }
+  .s5 .plan-box { border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px 12px; text-align: center; }
+  .s5 .plan-box.hot { border-color: var(--gold); background: rgba(255,184,0,0.07); }
+  .s5 .plan-name { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .s5 .plan-box.hot .plan-name { color: var(--gold); }
+  .s5 .plan-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); line-height: 1; letter-spacing: 1px; }
+  .s5 .plan-box.hot .plan-price { color: var(--gold); }
+  .s5 .plan-note { font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-top: 6px; line-height: 1.4; }
+  .s5 .plan-badge { background: var(--gold); color: #000; font-size: 0.6rem; font-weight: 800; padding: 2px 8px; border-radius: 100px; margin-bottom: 6px; display: inline-block; letter-spacing: 0.5px; }
+  .s5 .domain-note { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+  .s5 .domain-note span { color: var(--gold); }
+  .s5 .brand { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 4px; color: rgba(255,184,0,0.4); }
+  .s5 .slide-count { position: absolute; top: 28px; right: 28px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+
+  /* ========== SLIDE 6 — HOW IT WORKS ========== */
+  .s6 { background: #07070f; }
+  .s6 .content { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 44px 48px; justify-content: center; }
+  .s6 .tag { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .s6 .tag::before { content:''; width: 20px; height: 1.5px; background: var(--gold); }
+  .s6 .heading { font-family: 'Bebas Neue', sans-serif; font-size: 3.4rem; line-height: 0.9; color: var(--white); margin-bottom: 30px; letter-spacing: 1px; }
+  .s6 .heading .gold { color: var(--gold); }
+  .s6 .steps { display: flex; flex-direction: column; gap: 0; }
+  .s6 .step-row { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 20px; position: relative; }
+  .s6 .step-row:not(:last-child)::before { content:''; position: absolute; left: 17px; top: 40px; bottom: 0; width: 2px; background: linear-gradient(to bottom, rgba(255,184,0,0.3), transparent); }
+  .s6 .step-num { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,184,0,0.15); border: 1.5px solid rgba(255,184,0,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--gold); flex-shrink: 0; }
+  .s6 .step-text h4 { color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+  .s6 .step-text p { color: rgba(255,255,255,0.45); font-size: 0.82rem; line-height: 1.5; }
+  .s6 .timer { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--gold); background: rgba(255,184,0,0.08); border: 1px solid rgba(255,184,0,0.2); padding: 4px 12px; border-radius: 100px; width: fit-content; }
+  .s6 .brand { position: absolute; top: 28px; left: 48px; font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 4px; color: rgba(255,184,0,0.4); }
+  .s6 .slide-count { position: absolute; top: 28px; right: 28px; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+
+  /* ========== SLIDE 7 — CTA ========== */
+  .s7 { background: var(--black); overflow: hidden; }
+  .s7 .bg-lines {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,184,0,0.015) 40px,
+      rgba(255,184,0,0.015) 41px
+    );
+  }
+  .s7 .glow-center { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,184,0,0.1) 0%, transparent 60%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .s7 .gold-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent 5%, var(--gold) 30%, var(--gold2) 70%, transparent 95%); }
+  .s7 .content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; text-align: center; }
+  .s7 .eye-brow { font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+  .s7 .big { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 0.88; color: var(--white); letter-spacing: 2px; margin-bottom: 8px; }
+  .s7 .big .gold { color: var(--gold); }
+  .s7 .sub { color: rgba(255,255,255,0.45); font-size: 0.88rem; margin-bottom: 32px; max-width: 320px; line-height: 1.6; }
+  .s7 .wa-box {
+    background: #25D366; border-radius: 16px;
+    padding: 18px 32px; margin-bottom: 16px;
+    width: 100%; max-width: 360px;
+  }
+  .s7 .wa-box .wa-label { font-size: 0.7rem; color: rgba(0,0,0,0.6); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .s7 .wa-box .wa-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: #000; letter-spacing: 2px; line-height: 1; }
+  .s7 .insta-row {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; color: rgba(255,255,255,0.35);
+  }
+  .s7 .insta-row strong { color: rgba(255,255,255,0.6); }
+  .s7 .footer-brand { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 4px; color: rgba(255,184,0,0.35); }
+
+  /* DOWNLOAD BUTTONS */
+  .dl-row {
+    display: flex; gap: 10px; margin-top: 8px; margin-bottom: 20px;
+    justify-content: flex-start;
+    margin-left: calc(50% - 270px);
+  }
+  .dl-btn {
+    background: rgba(255,184,0,0.12);
+    border: 1px solid rgba(255,184,0,0.3);
+    color: var(--gold); padding: 6px 16px;
+    border-radius: 8px; font-size: 0.75rem; font-weight: 600;
+    cursor: pointer; font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.5px; transition: 0.2s;
+  }
+  .dl-btn:hover { background: rgba(255,184,0,0.2); }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: white; padding: 0; gap: 0; }
+    .page-header, .dl-row, .slide-label { display: none; }
+    .slide { page-break-after: always; border-radius: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .slide { width: 340px; height: 340px; }
+    .dl-row, .slide-label { margin-left: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>SiteLab India — Instagram Carousel</h1>
+  <p>7 slides ready to screenshot and post • 1080×1080 format</p>
+  <div class="how-to">
+    📸 <strong>How to use:</strong> Right-click each slide → "Save image as" OR take a screenshot of each slide.<br>
+    Then upload all 7 as a carousel on Instagram. <strong>Post at 7–9 PM for best reach.</strong>
+  </div>
+</div>
+
+<div class="slide-set">
+
+  <!-- ============ SLIDE 1 ============ -->
+  <div class="slide-label">SLIDE 1 / 7 — Cover (Hook)</div>
+  <div class="slide s1">
+    <div class="grid"></div>
+    <div class="glow-top"></div>
+    <div class="glow-bottom"></div>
+    <div class="deco-line"></div>
+    <div class="slide-count">01 / 07</div>
+    <div class="content">
+      <div class="brand-row">
+        <div class="brand-dot"></div>
+        <div class="brand-name">SITELAB INDIA</div>
+        <div class="brand-dot"></div>
+      </div>
+      <div class="divider"></div>
+      <div class="headline">
+        YOUR<br>
+        <span class="gold">WEBSITE</span><br>
+        <span class="outline">READY IN</span><br>
+        24 HRS
+      </div>
+      <div class="sub">PROFESSIONAL · MOBILE-READY · AFFORDABLE</div>
+      <div class="price-pill">⚡ Starting at just ₹999</div>
+    </div>
+    <div class="corner-tag">SITELABINDIA.COM</div>
+    <div class="swipe-hint">SWIPE TO SEE MORE →</div>
+  </div>
+
+  <!-- ============ SLIDE 2 ============ -->
+  <div class="slide-label">SLIDE 2 / 7 — The Problem</div>
+  <div class="slide s2">
+    <div class="noise"></div>
+    <div class="brand">SITELAB INDIA</div>
+    <div class="slide-count">02 / 07</div>
+    <div class="content">
+      <div class="tag">THE PROBLEM</div>
+      <div class="big-text">
+        NO WEBSITE<br>= <span class="red">LOST</span><br>CUSTOMERS
+      </div>
+      <div class="problems">
+        <div class="prob-item">
+          <div class="prob-x">✕</div>
+          <div class="prob-text"><strong>Customers can't find you</strong> online when they search Google</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-x">✕</div>
+          <div class="prob-text"><strong>Your competitor</strong> with a website gets the order — not you</div>
+        </div>
+        <div class="prob-item">
+          <div class="prob-x">✕</div>
+          <div class="prob-text">You look <strong>less professional</strong> without a web presence in 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 3 ============ -->
+  <div class="slide-label">SLIDE 3 / 7 — The Solution</div>
+  <div class="slide s3">
+    <div class="bg-circle"></div>
+    <div class="bg-circle2"></div>
+    <div class="glow"></div>
+    <div class="brand">SITELAB INDIA</div>
+    <div class="slide-count">03 / 07</div>
+    <div class="content">
+      <div class="tag">✦ THE SOLUTION</div>
+      <div class="big-text">
+        WE BUILD<br>YOUR <span class="gold">SITE</span><br>FAST
+      </div>
+      <div class="checks">
+        <div class="check-row">
+          <div class="chk">✓</div>
+          <div class="chk-text"><strong>1-Page professional website</strong> — clean & fast</div>
+        </div>
+        <div class="check-row">
+          <div class="chk">✓</div>
+          <div class="chk-text"><strong>Mobile-first design</strong> — perfect on every screen</div>
+        </div>
+        <div class="check-row">
+          <div class="chk">✓</div>
+          <div class="chk-text"><strong>WhatsApp button</strong> — customers contact you instantly</div>
+        </div>
+        <div class="check-row">
+          <div class="chk">✓</div>
+          <div class="chk-text"><strong>Ready in 24 hours</strong> — seriously, we mean it</div>
+        </div>
+      </div>
+      <div class="pill">For ANY small business ⚡</div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 4 ============ -->
+  <div class="slide-label">SLIDE 4 / 7 — Live Demo Work</div>
+  <div class="slide s4">
+    <div class="brand">SITELAB INDIA</div>
+    <div class="slide-count">04 / 07</div>
+    <div class="content" style="padding-top: 64px;">
+      <div class="tag">REAL WORK WE'VE DONE</div>
+      <div class="heading">OUR LIVE<br><span class="gold">DEMOS</span></div>
+      <div class="demo-list">
+        <div class="demo-item gym">
+          <div class="demo-icon">🏋️</div>
+          <div class="demo-info">
+            <h3>Yadav Fitness Club</h3>
+            <p>Gym & Fitness • Jwahar Nagar, Kota</p>
+          </div>
+          <div class="demo-arrow">↗</div>
+        </div>
+        <div class="demo-item hostel">
+          <div class="demo-icon">🏠</div>
+          <div class="demo-info">
+            <h3>Radha Raman Residency</h3>
+            <p>Hostel & PG • Premium Student Living, Kota</p>
+          </div>
+          <div class="demo-arrow">↗</div>
+        </div>
+        <div class="demo-item realestate">
+          <div class="demo-icon">🏗️</div>
+          <div class="demo-info">
+            <h3>Lekhraj Contractor</h3>
+            <p>Real Estate & Precast Walls • Kota</p>
+          </div>
+          <div class="demo-arrow">↗</div>
+        </div>
+      </div>
+      <div class="bio-note">🔗 Click link in bio to see all live demos</div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 5 ============ -->
+  <div class="slide-label">SLIDE 5 / 7 — Pricing</div>
+  <div class="slide s5">
+    <div class="glow"></div>
+    <div class="brand">SITELAB INDIA</div>
+    <div class="slide-count">05 / 07</div>
+    <div class="content">
+      <div class="tag">SIMPLE PRICING</div>
+      <div class="heading">NO HIDDEN<br><span class="gold">CHARGES</span></div>
+      <div class="plans">
+        <div class="plan-box">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">₹999</div>
+          <div class="plan-note">1-Page Site<br>Ready in 24 hrs</div>
+        </div>
+        <div class="plan-box hot">
+          <div class="plan-badge">⭐ POPULAR</div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price">₹2998</div>
+          <div class="plan-note">With Domain<br>Included</div>
+        </div>
+        <div class="plan-box">
+          <div class="plan-name">Custom</div>
+          <div class="plan-price" style="font-size:1.6rem;line-height:1.2;padding-top:6px">Let's<br>Talk</div>
+          <div class="plan-note">Tailored<br>Solution</div>
+        </div>
+      </div>
+      <div class="domain-note">Domain registration: <span>₹1,999/year</span> (optional add-on)</div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 6 ============ -->
+  <div class="slide-label">SLIDE 6 / 7 — How It Works</div>
+  <div class="slide s6">
+    <div class="brand">SITELAB INDIA</div>
+    <div class="slide-count">06 / 07</div>
+    <div class="content" style="padding-top: 64px;">
+      <div class="tag">HOW IT WORKS</div>
+      <div class="heading">3 SIMPLE<br><span class="gold">STEPS</span></div>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>WhatsApp Us Your Details</h4>
+            <p>Business name, what you do, your photos. That's all we need to start.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>We Design & Build It</h4>
+            <p>Your clean, fast, mobile-ready website is built within 24 hours. No delays.</p>
+            <div class="timer">⏱ 24 HOURS DELIVERY</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>Review & Go Live 🚀</h4>
+            <p>You approve it, we publish it. Your business is online!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 7 ============ -->
+  <div class="slide-label">SLIDE 7 / 7 — CTA (Most Important)</div>
+  <div class="slide s7">
+    <div class="bg-lines"></div>
+    <div class="glow-center"></div>
+    <div class="gold-bar"></div>
+    <div class="content">
+      <div class="eye-brow">READY TO GO ONLINE?</div>
+      <div class="big">
+        CHAT<br>WITH <span class="gold">US</span><br>NOW
+      </div>
+      <div class="sub">Tell us your business name — we'll do the rest. Free quote, no obligation.</div>
+      <div class="wa-box">
+        <div class="wa-label">💬 WhatsApp Us</div>
+        <div class="wa-num">+91 94607 22862</div>
+      </div>
+      <div class="insta-row">📸 Follow us: <strong>@sitelabindia</strong></div>
+    </div>
+    <div class="footer-brand">SITELAB INDIA</div>
+  </div>
+
+</div><!-- /slide-set -->
+
+<div style="height:60px"></div>
+</body>
+</html>
