@@ -1947,7 +1947,7 @@ _Sent via SiteLab India website form_ ✅`;
     <div class="sl-avatar">🤖</div>
     <div class="sl-hinfo">
       <h4>SiteLab AI Assistant</h4>
-      <p><span class="sl-online-dot"></span> Online — Powered by NVIDIA AI</p>
+      <p><span class="sl-online-dot"></span> Online — Powered by Gemini AI</p>
     </div>
     <button class="sl-close" onclick="slToggleChat()">✕</button>
   </div>
@@ -1962,18 +1962,17 @@ _Sent via SiteLab India website form_ ✅`;
       oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
     <button class="sl-send" id="slSendBtn" onclick="slSend()">➤</button>
   </div>
-  <div class="sl-powered">✦ AI by NVIDIA · Gemma · SiteLab India</div>
+  <div class="sl-powered">✦ AI by Google Gemini · SiteLab India</div>
 </div>
 
 <script>
 // ─────────────────────────────────────────────
-//  ➡  PASTE YOUR NEW NVIDIA API KEY HERE ↓
+//  ➡  Gemini API Key ↓
 // ─────────────────────────────────────────────
-const NVIDIA_API_KEY = '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';
+const GEMINI_API_KEY = 'AIzaSyB0SQQS2uJAODAQU9XpoXA17Ujvcf-sSaQ';
 // ─────────────────────────────────────────────
 
-const NVIDIA_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
-const NVIDIA_MODEL = 'google/gemma-3n-e4b-it';
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 const SYSTEM_PROMPT = `You are a friendly, smart sales assistant for "SiteLab India" — a web design company run by Kapil Ahir based in Kota, Rajasthan.
 
@@ -2091,39 +2090,30 @@ async function slAsk(userMsg) {
   document.getElementById('slSendBtn').disabled = true;
   slShowTyping();
 
-  slChatHistory.push({ role: 'user', content: userMsg });
+  slChatHistory.push({ role: 'user', parts: [{ text: userMsg }] });
 
   try {
-    const res = await fetch(NVIDIA_URL, {
+    const res = await fetch(GEMINI_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${NVIDIA_API_KEY}`
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: NVIDIA_MODEL,
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          ...slChatHistory
-        ],
-        max_tokens: 300,
-        temperature: 0.75,
-        top_p: 0.70,
-        stream: false
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: slChatHistory,
+        generationConfig: { temperature: 0.75, maxOutputTokens: 300 }
       })
     });
 
     const data = await res.json();
     slHideTyping();
 
-    if (data.error || !data.choices) {
-      slAddBubble('bot', '⚠️ API Key issue. Please paste your new NVIDIA key in the HTML file.');
+    if (data.error) {
+      slAddBubble('bot', '⚠️ API Key issue. Please check your Gemini API key.');
       document.getElementById('slSendBtn').disabled = false;
       return;
     }
 
-    let reply = data.choices?.[0]?.message?.content || "Sorry, I didn't get that. Please try again!";
-    slChatHistory.push({ role: 'assistant', content: reply });
+    let reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn't get that. Please try again!";
+    slChatHistory.push({ role: 'model', parts: [{ text: reply }] });
 
     // Check for lead capture trigger
     if (reply.includes('LEAD_CAPTURED:')) {
