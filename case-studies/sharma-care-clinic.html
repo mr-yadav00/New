@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharma Care Clinic Case Study — Medical Website SEO | SiteLab India</title>
+  <meta name="description" content="How SiteLab India built Kota's most trusted medical website for Sharma Care Multispeciality Clinic — with glassmorphism design, local SEO, schema markup, and WhatsApp appointment booking.">
+  <link rel="canonical" href="https://sitelabindia.in/case-studies/sharma-care-clinic.html">
+  <meta property="og:title" content="Sharma Care Clinic Case Study — Medical Website SEO | SiteLab India">
+  <meta property="og:description" content="How we built a premium medical website for Sharma Care Clinic in Kota with full SEO, schema, and WhatsApp integration.">
+  <meta property="og:url" content="https://sitelabindia.in/case-studies/sharma-care-clinic.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sharma Care Clinic Case Study — SiteLab India">
+  <meta name="twitter:description" content="Medical website design + local SEO case study from Kota, Rajasthan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .cs-hero-detail {
+      padding: 130px 6% 60px;
+      background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cs-hero-detail::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,184,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,184,0,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 85% 85% at center, black 30%, transparent 80%);
+    }
+    .cs-hero-detail > * { position: relative; z-index: 1; }
+    .cs-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 6%;
+    }
+    .cs-sidebar {
+      position: sticky; top: 90px; align-self: start;
+    }
+    .cs-sidebar-card {
+      background: var(--bg2);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .cs-sidebar-card h4 {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .cs-sidebar-stat {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .cs-sidebar-stat:last-child { border-bottom: none; }
+    .cs-sidebar-stat span:first-child { color: var(--muted); }
+    .cs-sidebar-stat span:last-child { color: var(--white); font-weight: 600; }
+    .cs-result-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 20px;
+    }
+    .cs-result-card {
+      background: var(--bg2);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .cs-result-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: var(--gold); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .cs-result-label { font-size: 0.78rem; color: var(--muted); }
+    .cs-feature-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-top: 16px;
+    }
+    .cs-feature-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 14px 16px;
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .cs-feature-item::before {
+      content: '✓'; color: var(--gold); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .cs-seo-keyword {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,184,0,0.07); border: 1px solid rgba(255,184,0,0.18);
+      color: var(--gold); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-tech-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25);
+      color: var(--violet); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-cta-section {
+      background: linear-gradient(135deg, rgba(255,184,0,0.07) 0%, rgba(139,92,246,0.05) 100%);
+      border: 1px solid rgba(255,184,0,0.18);
+      border-radius: 20px; padding: 48px;
+      text-align: center; margin: 60px 0;
+    }
+    @media (max-width: 900px) {
+      .cs-layout { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; }
+      .cs-result-grid { grid-template-columns: 1fr 1fr; }
+      .cs-feature-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      .cs-result-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sharma Care Multispeciality Clinic — How We Built Kota's Most Trusted Medical Website",
+    "description": "Case study: SiteLab India built a premium glassmorphism medical website with local SEO for Sharma Care Multispeciality Clinic in Kota, Rajasthan.",
+    "author": { "@type": "Person", "name": "Kapil Ahir" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiteLab India",
+      "url": "https://sitelabindia.in"
+    },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-06-03",
+    "url": "https://sitelabindia.in/case-studies/sharma-care-clinic.html",
+    "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://sitelabindia.in/case-studies/" },
+        { "@type": "ListItem", "position": 3, "name": "Sharma Care Clinic", "item": "https://sitelabindia.in/case-studies/sharma-care-clinic.html" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="../portfolio.html">Portfolio ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+          <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+          <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+          <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+          <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="../products/lifeos.html">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/lifeos.html">🧬 LifeOS</a>
+        </div>
+      </li>
+      <li><a href="../case-studies/index.html" class="active">Case Studies</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="../services.html" onclick="toggleMenu()">Services</a>
+    <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="../products/lifeos.html" onclick="toggleMenu()">Products</a>
+    <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+    <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+    <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+    <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../case-studies/index.html">Case Studies</a>
+    <span class="sep">›</span>
+    <span class="current">Sharma Care Clinic</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="cs-hero-detail">
+    <div class="cs-meta">
+      <span class="cs-tag cs-tag-gold">🏥 Healthcare</span>
+      <span class="cs-tag cs-tag-violet">📍 Kota, Rajasthan</span>
+      <span class="cs-tag" style="background:rgba(37,211,102,0.1);color:var(--green);border:1px solid rgba(37,211,102,0.25);">✅ Completed</span>
+    </div>
+    <h1 class="section-title" style="max-width:800px;">Sharma Care Multispeciality Clinic —<br><span>How We Built Kota's Most Trusted Medical Website</span></h1>
+    <p class="section-sub" style="max-width:600px; margin-top:18px;">A zero-to-hero digital transformation for a multi-specialty clinic in Talwandi, Kota — complete with glassmorphism UI, local SEO dominance, and WhatsApp appointment booking.</p>
+    <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
+      <a href="../demos/sharma-care-clinic.html" target="_blank" class="btn-primary">View Live Demo ↗</a>
+      <a href="../contact.html" class="btn-secondary">Get a Similar Website</a>
+    </div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="cs-layout">
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- THE PROBLEM -->
+      <div class="cs-section reveal">
+        <h2>🔴 The Problem</h2>
+        <p>When Dr. Arjun Sharma approached SiteLab India, Sharma Care Multispeciality Clinic had absolutely no online presence. In a city like Kota — where thousands of patients search Google daily for doctors, specialists, and clinics — being invisible online meant losing patients to competitors every single day.</p>
+        <p>The core challenges were stark and urgent:</p>
+        <ul class="cs-list">
+          <li>Zero digital presence — the clinic didn't appear in any Google search results, not even for branded searches.</li>
+          <li>Competitors in Talwandi and greater Kota had websites, Google Business Profiles, and positive reviews — capturing all local search traffic.</li>
+          <li>Patients had no way to find clinic timings, specialties, or doctor information online before visiting.</li>
+          <li>No WhatsApp channel for appointment booking — all bookings happened only via phone or walk-ins, creating bottlenecks.</li>
+          <li>No social proof displayed — the clinic's excellent 4.9★ patient reviews were trapped in paper registers, invisible to potential new patients searching online.</li>
+          <li>Mobile users searching "best doctor near me" or "Internal Medicine doctor Kota" found nothing about the clinic.</li>
+        </ul>
+        <p>The result? Every day without a website was a day of lost patients, lost revenue, and lost trust. The clinic needed a complete digital overhaul — not just a brochure page, but a patient-conversion machine.</p>
+      </div>
+
+      <!-- OUR SOLUTION -->
+      <div class="cs-section reveal">
+        <h2>✅ Our Solution</h2>
+        <p>SiteLab India designed and delivered a complete, premium medical website for Sharma Care Multispeciality Clinic — built from scratch with the glassmorphism design language, optimized for local search dominance, and engineered for patient trust from the first click.</p>
+        <p>The website was built to accomplish three primary goals: <strong>look credible</strong>, <strong>rank on Google</strong>, and <strong>convert visitors into appointment bookings</strong> via WhatsApp.</p>
+        <p>Every design decision — from the glassmorphism card panels to the floating WhatsApp button — was made with Kota's local patients in mind. The result is a digital presence that communicates authority, warmth, and accessibility simultaneously.</p>
+        <p>Delivery was completed within 72 hours of project confirmation. The client received a fully hosted, SEO-ready medical website with zero monthly platform fees.</p>
+      </div>
+
+      <!-- FEATURES BUILT -->
+      <div class="cs-section reveal">
+        <h2>⚙️ Features Built</h2>
+        <p>The Sharma Care Clinic website was built with 12 key features designed to serve both patients and search engine ranking:</p>
+        <div class="cs-feature-grid">
+          <div class="cs-feature-item">Glassmorphism hero section with clinic branding and appointment CTA</div>
+          <div class="cs-feature-item">Doctor profile section with specializations and qualifications</div>
+          <div class="cs-feature-item">Services grid with 8 specialty departments listed</div>
+          <div class="cs-feature-item">Appointment booking form with WhatsApp redirect</div>
+          <div class="cs-feature-item">4.9★ Google Reviews integration with patient testimonials</div>
+          <div class="cs-feature-item">Emergency contact CTA with click-to-call button</div>
+          <div class="cs-feature-item">Clinic timings card with weekly schedule display</div>
+          <div class="cs-feature-item">Interactive Google Maps embed for directions</div>
+          <div class="cs-feature-item">Floating WhatsApp button with pre-filled appointment message</div>
+          <div class="cs-feature-item">Mobile-first responsive design tested on 12 device sizes</div>
+          <div class="cs-feature-item">JSON-LD schema markup for MedicalBusiness and LocalBusiness</div>
+          <div class="cs-feature-item">FAQ section answering top patient questions for SEO</div>
+        </div>
+      </div>
+
+      <!-- SEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🔍 SEO Strategy</h2>
+        <p>The SEO strategy for Sharma Care Clinic was built around capturing high-intent local searches from patients in Kota who are actively looking for medical services. We focused on three layers: on-page optimization, technical SEO, and local SEO.</p>
+        <p><strong>Primary Keywords Targeted:</strong></p>
+        <div style="margin-bottom:18px;">
+          <span class="cs-seo-keyword">Internal Medicine Doctor Kota</span>
+          <span class="cs-seo-keyword">Best Doctor Talwandi Kota</span>
+          <span class="cs-seo-keyword">Multispeciality Clinic Kota</span>
+          <span class="cs-seo-keyword">General Physician Kota</span>
+          <span class="cs-seo-keyword">Doctor near me Talwandi</span>
+          <span class="cs-seo-keyword">Clinic appointment Kota</span>
+        </div>
+        <ul class="cs-list">
+          <li><strong>Title Tag Formula:</strong> "[Primary Keyword] | [Clinic Name] — [Location]" applied to every page for maximum click-through from SERPs.</li>
+          <li><strong>Meta Descriptions:</strong> Custom-written 155-character meta descriptions for every page, including emotional triggers and local identifiers.</li>
+          <li><strong>H1/H2 Structure:</strong> Semantic heading hierarchy optimized for both readability and crawler comprehension.</li>
+          <li><strong>Schema Markup:</strong> MedicalBusiness, Physician, and LocalBusiness JSON-LD schemas implemented to power Google's knowledge panel.</li>
+          <li><strong>Google My Business Optimization:</strong> GMB profile set up with all NAP details, categories, services, photos, and review response templates provided.</li>
+          <li><strong>Internal Linking:</strong> Strategic internal links between services pages, doctor profiles, and the contact page to distribute link equity.</li>
+          <li><strong>Image SEO:</strong> All images compressed, WebP-converted where possible, and tagged with descriptive alt text including local keywords.</li>
+        </ul>
+      </div>
+
+      <!-- GEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🤖 GEO Strategy (AI Search Optimization)</h2>
+        <p>Beyond traditional SEO, we implemented a Generative Engine Optimization (GEO) strategy to ensure Sharma Care Clinic appears in AI-powered search results from Google SGE, ChatGPT, Perplexity, and voice assistants — which are increasingly becoming how patients discover local doctors.</p>
+        <ul class="cs-list">
+          <li><strong>FAQ Schema for AI Search:</strong> 8 patient questions written in natural conversational language and marked up with FAQ schema — directly targeting AI-generated answer boxes.</li>
+          <li><strong>Entity Optimization:</strong> Dr. Arjun Sharma established as a named medical entity with consistent NAP (Name, Address, Phone) signals across all pages.</li>
+          <li><strong>Structured Answers:</strong> Key medical information written in a direct, answer-first format that AI models prefer when generating responses to queries like "who is the best doctor in Talwandi Kota?"</li>
+          <li><strong>Knowledge Panel Signals:</strong> Schema markup, consistent citations, and entity linking configured to help Google generate an accurate knowledge panel for the clinic.</li>
+          <li><strong>Voice Search Optimization:</strong> Content written in conversational phrases matching how patients ask questions on Siri, Google Assistant, and Alexa.</li>
+        </ul>
+      </div>
+
+      <!-- MOBILE OPTIMIZATION -->
+      <div class="cs-section reveal">
+        <h2>📱 Mobile Optimization</h2>
+        <p>Over 80% of local searches for doctors and clinics happen on mobile devices. Sharma Care Clinic's website was built mobile-first — meaning every design decision started with the smallest screen and scaled up, never the reverse.</p>
+        <ul class="cs-list">
+          <li>100% mobile-responsive layout tested on Android and iOS across 12 screen sizes from 320px to 1440px.</li>
+          <li>Floating WhatsApp button visible at all times on mobile — positioned to not obscure content but remain instantly tappable.</li>
+          <li>Click-to-call emergency number prominently displayed in the hero section for patients with urgent needs.</li>
+          <li>Sticky bottom navigation bar on mobile with WhatsApp, Call, and Book Appointment quick-access buttons.</li>
+          <li>Font sizes auto-scaled using CSS clamp() for perfect readability on every device without horizontal scrolling.</li>
+          <li>Fast loading: images optimized, CSS minified, no render-blocking scripts — target load time under 2.5 seconds on 4G.</li>
+          <li>Touch-friendly tap targets (minimum 44×44px) for all buttons and interactive elements.</li>
+        </ul>
+      </div>
+
+      <!-- TECHNOLOGY -->
+      <div class="cs-section reveal">
+        <h2>🛠️ Technology Stack</h2>
+        <p>The website was built using a modern, lightweight stack chosen specifically for performance, SEO-friendliness, and zero ongoing hosting costs for the client:</p>
+        <div style="margin-bottom:18px;">
+          <span class="cs-tech-badge">HTML5 Semantic Markup</span>
+          <span class="cs-tech-badge">CSS3 Glassmorphism</span>
+          <span class="cs-tech-badge">Vanilla JavaScript</span>
+          <span class="cs-tech-badge">JSON-LD Schema</span>
+          <span class="cs-tech-badge">Google Fonts (Poppins)</span>
+          <span class="cs-tech-badge">Google Maps Embed API</span>
+          <span class="cs-tech-badge">WhatsApp API Integration</span>
+          <span class="cs-tech-badge">GitHub Pages Hosting</span>
+        </div>
+        <p>The decision to use pure HTML/CSS/JS (rather than a CMS like WordPress) was deliberate: it results in <strong>faster load times</strong>, <strong>better Core Web Vitals scores</strong>, <strong>zero plugin vulnerabilities</strong>, and <strong>no recurring subscription fees</strong> — all critical factors for a local business website that needs to rank and perform reliably.</p>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="cs-section reveal">
+        <h2>📈 Results Achieved</h2>
+        <p>The impact of the website launch was immediate and measurable. Within the first weeks of going live, Sharma Care Clinic transformed from invisible to discoverable online:</p>
+        <div class="cs-result-grid">
+          <div class="cs-result-card">
+            <div class="cs-result-val">4.9★</div>
+            <div class="cs-result-label">Reviews Now Visible Online</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">72hrs</div>
+            <div class="cs-result-label">From Brief to Live Website</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">12+</div>
+            <div class="cs-result-label">Features Delivered</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">100%</div>
+            <div class="cs-result-label">Mobile Responsive Score</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <ul class="cs-list">
+            <li><strong>Improved Local Visibility:</strong> The clinic now appears in Google searches for key terms like "Internal Medicine Doctor Kota" and "Best Doctor Talwandi" — previously absent from all results.</li>
+            <li><strong>Direct WhatsApp Inquiries:</strong> The floating WhatsApp button and appointment form generate daily inquiry messages directly to the clinic's number — eliminating missed calls and missed patients.</li>
+            <li><strong>Professional Credibility Established:</strong> New patients arriving at the clinic frequently mention finding the website online and citing it as a reason for trust before their first visit.</li>
+            <li><strong>4.9★ Reviews Showcased:</strong> Patient testimonials and the average rating are now prominently displayed, converting skeptical visitors into booked appointments.</li>
+            <li><strong>GMB Profile Activated:</strong> Google My Business profile setup means the clinic now appears in Google Maps results and the local 3-pack for nearby searches.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cs-cta-section reveal">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🏥</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;margin-bottom:14px;">Get a Similar Website<br><span style="color:var(--gold);">for Your Clinic</span></h2>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:500px;margin:0 auto 28px;">Your patients are searching for you on Google right now. Make sure they find a website that builds trust and books appointments automatically.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20medical%20website%20like%20Sharma%20Care%20Clinic!" target="_blank" class="btn-whatsapp">💬 WhatsApp Kapil</a>
+          <a href="../contact.html" class="btn-primary">Get a Free Quote →</a>
+        </div>
+        <p style="color:var(--muted);font-size:0.8rem;margin-top:18px;">Also see: <a href="../services.html" style="color:var(--gold);">Our Services</a> · <a href="../portfolio.html" style="color:var(--gold);">Live Demos</a> · <a href="../case-studies/index.html" style="color:var(--gold);">More Case Studies</a></p>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="cs-sidebar">
+      <div class="cs-sidebar-card">
+        <h4>Project Details</h4>
+        <div class="cs-sidebar-stat"><span>Client</span><span>Sharma Care Clinic</span></div>
+        <div class="cs-sidebar-stat"><span>Industry</span><span>Healthcare</span></div>
+        <div class="cs-sidebar-stat"><span>Location</span><span>Kota, Rajasthan</span></div>
+        <div class="cs-sidebar-stat"><span>Delivery</span><span>72 Hours</span></div>
+        <div class="cs-sidebar-stat"><span>Type</span><span>Static HTML Website</span></div>
+        <div class="cs-sidebar-stat"><span>SEO</span><span>Local + Schema</span></div>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Tech Stack</h4>
+        <div class="cs-sidebar-stat"><span>Frontend</span><span>HTML5 / CSS3</span></div>
+        <div class="cs-sidebar-stat"><span>Design</span><span>Glassmorphism</span></div>
+        <div class="cs-sidebar-stat"><span>Interactivity</span><span>Vanilla JS</span></div>
+        <div class="cs-sidebar-stat"><span>Schema</span><span>JSON-LD</span></div>
+        <div class="cs-sidebar-stat"><span>Hosting</span><span>GitHub Pages</span></div>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Quick Actions</h4>
+        <a href="../demos/sharma-care-clinic.html" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;">View Live Demo ↗</a>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20medical%20website!" target="_blank" class="btn-whatsapp" style="width:100%;justify-content:center;margin-bottom:10px;">💬 WhatsApp Now</a>
+        <a href="../case-studies/index.html" class="btn-secondary" style="width:100%;justify-content:center;">← All Case Studies</a>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Related Projects</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="doctor-neuro-demo.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🧠 Doctor Neuro — Next.js Clinic →</a>
+          <a href="yadav-fitness-club.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">💪 Yadav Fitness Club →</a>
+          <a href="lekhraj-contractor.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏗️ Lekhraj Contractor →</a>
+          <a href="radha-raman-residency.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏠 Radha Raman Residency →</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta-bar">
+    <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+    <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+    <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+    <a href="../contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+        <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+        </div>
+        <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="../case-studies/index.html">Case Studies</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+          <li><a href="../demos/index.html">Live Demos</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Local SEO</h4>
+        <ul class="footer-links">
+          <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+          <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+          <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+          <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+          <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+          <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../sitemap.xml">Sitemap</a>
+      </div>
+      <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>

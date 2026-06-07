@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies — Website Design Results | SiteLab India Kota</title>
+  <meta name="description" content="Real case studies from SiteLab India — see how we built websites for doctors, gyms, contractors, and PG hostels in Kota, Rajasthan that generate leads and visibility.">
+  <link rel="canonical" href="https://sitelabindia.in/case-studies/">
+  <meta property="og:title" content="Case Studies — Website Design Results | SiteLab India Kota">
+  <meta property="og:description" content="Real projects, real results. See how SiteLab India transforms local businesses in Kota with premium websites and SEO.">
+  <meta property="og:url" content="https://sitelabindia.in/case-studies/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sitelabindia.in/assets/images/og-case-studies.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Studies — SiteLab India">
+  <meta name="twitter:description" content="Real website projects for Kota businesses. Doctors, gyms, contractors — see the results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .cs-hub-hero {
+      padding: 130px 6% 70px;
+      background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cs-hub-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,184,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,184,0,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 85% 85% at center, black 30%, transparent 80%);
+    }
+    .cs-hub-hero > * { position: relative; z-index: 1; }
+    .cs-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .cs-card {
+      background: var(--bg2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+      display: flex; flex-direction: column;
+    }
+    .cs-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.6);
+      border-color: rgba(255,184,0,0.2);
+    }
+    .cs-card-thumb {
+      height: 200px; overflow: hidden; position: relative;
+    }
+    .cs-card-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .cs-card:hover .cs-card-thumb img { transform: scale(1.07); }
+    .cs-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(8,8,17,0.85) 100%);
+    }
+    .cs-card-industry {
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(8,8,17,0.9); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,184,0,0.45);
+      padding: 4px 12px; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .cs-card-body {
+      padding: 26px; flex: 1; display: flex; flex-direction: column;
+    }
+    .cs-card-body h3 {
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .cs-card-problem {
+      color: var(--muted); font-size: 0.88rem; line-height: 1.7;
+      margin-bottom: 20px; flex: 1;
+    }
+    .cs-card-tags {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;
+    }
+    .cs-card-tag {
+      background: rgba(255,255,255,0.05);
+      padding: 3px 10px; border-radius: 100px;
+      font-size: 0.68rem; color: var(--muted);
+    }
+    .cs-card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #000;
+      padding: 11px 22px; border-radius: 8px;
+      font-weight: 700; font-size: 0.82rem;
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cs-card-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255,184,0,0.3);
+    }
+    .cs-hub-cta {
+      padding: 100px 6%;
+      background: linear-gradient(135deg, rgba(255,184,0,0.06) 0%, rgba(139,92,246,0.04) 100%);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+    }
+    @media (max-width: 1024px) { .cs-cards-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .cs-cards-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies — SiteLab India",
+    "description": "Real website design and SEO case studies from SiteLab India, Kota, Rajasthan.",
+    "url": "https://sitelabindia.in/case-studies/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiteLab India",
+      "url": "https://sitelabindia.in",
+      "founder": { "@type": "Person", "name": "Kapil Ahir" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Talwandi",
+        "addressLocality": "Kota",
+        "addressRegion": "Rajasthan",
+        "postalCode": "324005",
+        "addressCountry": "IN"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://sitelabindia.in/case-studies/" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="../portfolio.html">Portfolio ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+          <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+          <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+          <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+          <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="../products/lifeos.html">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/lifeos.html">🧬 LifeOS</a>
+        </div>
+      </li>
+      <li><a href="../case-studies/index.html" class="active">Case Studies</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="../services.html" onclick="toggleMenu()">Services</a>
+    <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="../products/lifeos.html" onclick="toggleMenu()">Products</a>
+    <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+    <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+    <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+    <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <span class="current">Case Studies</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="cs-hub-hero">
+    <div class="section-tag">Client Work &amp; Results</div>
+    <h1 class="section-title">Real Projects.<br><span>Real Results.</span></h1>
+    <p class="section-sub">Every business we work with has a story. Here's how SiteLab India helped local clinics, gyms, contractors, and hostels in Kota build a powerful digital presence — with websites that convert visitors into customers.</p>
+    <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
+      <a href="../contact.html" class="btn-primary">Start Your Project →</a>
+      <a href="../portfolio.html" class="btn-secondary">View Live Demos</a>
+    </div>
+  </section>
+
+  <!-- TRUST STATS -->
+  <div class="trust-banner">
+    <div class="trust-item"><span class="trust-icon">🏆</span><div class="trust-text"><h4>5+ Completed Projects</h4><p>Across multiple industries</p></div></div>
+    <div class="trust-item"><span class="trust-icon">📍</span><div class="trust-text"><h4>Based in Kota</h4><p>Serving all of Rajasthan</p></div></div>
+    <div class="trust-item"><span class="trust-icon">⚡</span><div class="trust-text"><h4>72-Hour Delivery</h4><p>Live within 3 days</p></div></div>
+    <div class="trust-item"><span class="trust-icon">🔍</span><div class="trust-text"><h4>SEO + GEO Ready</h4><p>Built to rank on Google &amp; AI</p></div></div>
+  </div>
+
+  <!-- CASE STUDY CARDS -->
+  <section style="padding-top:70px; padding-bottom:80px;">
+    <div style="text-align:center; margin-bottom:50px;">
+      <div class="section-tag" style="justify-content:center;">All Projects</div>
+      <h2 class="section-title">Our Case <span>Studies</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Click any card to read the full story — including the problem, our solution, the tech stack, SEO strategy, and results achieved.</p>
+    </div>
+
+    <div class="cs-cards-grid">
+
+      <!-- DOCTOR NEURO -->
+      <div class="cs-card reveal">
+        <div class="cs-card-thumb">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Doctor Neuro — Neurology Clinic Website Case Study">
+          <div class="cs-card-overlay"></div>
+          <div class="cs-card-industry">🧠 Healthcare / Neurology</div>
+        </div>
+        <div class="cs-card-body">
+          <h3>Doctor Neuro Demo — Full-Stack Neurology Website</h3>
+          <p class="cs-card-problem">A neurology specialist needed a modern, high-trust digital presence with online appointment booking, admin panel, and slot management. The challenge: build a full-stack solution with real database integration — not just a brochure website.</p>
+          <div class="cs-card-tags">
+            <span class="cs-card-tag">Next.js 14</span>
+            <span class="cs-card-tag">Supabase</span>
+            <span class="cs-card-tag">TypeScript</span>
+            <span class="cs-card-tag">Appointment Booking</span>
+          </div>
+          <a href="doctor-neuro-demo.html" class="cs-card-link">Read Case Study →</a>
+        </div>
+      </div>
+
+      <!-- SHARMA CARE CLINIC -->
+      <div class="cs-card reveal">
+        <div class="cs-card-thumb">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Sharma Care Multispeciality Clinic Website Case Study">
+          <div class="cs-card-overlay"></div>
+          <div class="cs-card-industry">🏥 Healthcare / Clinic</div>
+        </div>
+        <div class="cs-card-body">
+          <h3>Sharma Care Multispeciality Clinic — Medical Website &amp; SEO</h3>
+          <p class="cs-card-problem">Dr. Arjun Sharma had zero online presence. Patients couldn't find the clinic on Google. Competitors in Kota were capturing all search traffic. No WhatsApp booking channel existed for appointment inquiries.</p>
+          <div class="cs-card-tags">
+            <span class="cs-card-tag">Glassmorphism</span>
+            <span class="cs-card-tag">Local SEO</span>
+            <span class="cs-card-tag">Schema Markup</span>
+            <span class="cs-card-tag">WhatsApp CTA</span>
+          </div>
+          <a href="sharma-care-clinic.html" class="cs-card-link">Read Case Study →</a>
+        </div>
+      </div>
+
+      <!-- LEKHRAJ CONTRACTOR -->
+      <div class="cs-card reveal">
+        <div class="cs-card-thumb">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Lekhraj Contractor Industrial Website Case Study">
+          <div class="cs-card-overlay"></div>
+          <div class="cs-card-industry">🏗️ Construction / Industrial</div>
+        </div>
+        <div class="cs-card-body">
+          <h3>Lekhraj Contractor — Industrial Digital Presence for Precast Business</h3>
+          <p class="cs-card-problem">A leading precast boundary wall contractor in Kota had no website. Industrial clients couldn't verify credibility or discover the business online. There was no system to generate or capture leads digitally.</p>
+          <div class="cs-card-tags">
+            <span class="cs-card-tag">Industrial Design</span>
+            <span class="cs-card-tag">Lead Generation</span>
+            <span class="cs-card-tag">Local SEO</span>
+            <span class="cs-card-tag">Gold Theme</span>
+          </div>
+          <a href="lekhraj-contractor.html" class="cs-card-link">Read Case Study →</a>
+        </div>
+      </div>
+
+      <!-- YADAV FITNESS CLUB -->
+      <div class="cs-card reveal">
+        <div class="cs-card-thumb">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Yadav Fitness Club Gym Website Case Study">
+          <div class="cs-card-overlay"></div>
+          <div class="cs-card-industry">💪 Fitness / Gym</div>
+        </div>
+        <div class="cs-card-body">
+          <h3>Yadav Fitness Club — Gym's Digital Membership Drive</h3>
+          <p class="cs-card-problem">The gym relied 100% on word-of-mouth. There was no online membership inquiry system and no way to showcase trainers, facilities, pricing, or class schedules to prospective members searching on Google.</p>
+          <div class="cs-card-tags">
+            <span class="cs-card-tag">Dark Sporty Theme</span>
+            <span class="cs-card-tag">Membership Pricing</span>
+            <span class="cs-card-tag">Trainer Profiles</span>
+            <span class="cs-card-tag">Gym SEO</span>
+          </div>
+          <a href="yadav-fitness-club.html" class="cs-card-link">Read Case Study →</a>
+        </div>
+      </div>
+
+      <!-- RADHA RAMAN RESIDENCY -->
+      <div class="cs-card reveal">
+        <div class="cs-card-thumb">
+          <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Radha Raman Residency PG Hostel Website Case Study">
+          <div class="cs-card-overlay"></div>
+          <div class="cs-card-industry">🏠 Student PG / Hostel</div>
+        </div>
+        <div class="cs-card-body">
+          <h3>Radha Raman Residency — How a Student PG Got 3× More Inquiries</h3>
+          <p class="cs-card-problem">A student PG/hostel in Kota had no online presence during peak admission season. Parents and students searching "PG in Kota" or "Student Hostel Kota" found only competitors. Inquiry volume was low and unpredictable.</p>
+          <div class="cs-card-tags">
+            <span class="cs-card-tag">Student Hostel SEO</span>
+            <span class="cs-card-tag">Room Showcase</span>
+            <span class="cs-card-tag">Amenities Grid</span>
+            <span class="cs-card-tag">WhatsApp Inquiry</span>
+          </div>
+          <a href="radha-raman-residency.html" class="cs-card-link">Read Case Study →</a>
+        </div>
+      </div>
+
+      <!-- CTA CARD -->
+      <div class="cs-card" style="background: linear-gradient(135deg, rgba(255,184,0,0.08) 0%, rgba(139,92,246,0.05) 100%); border-color: rgba(255,184,0,0.2); justify-content:center; align-items:center; text-align:center; padding: 40px 28px;">
+        <div style="font-size:3rem;margin-bottom:18px;">🚀</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;margin-bottom:14px;">Your Business <span style="color:var(--gold);">Next?</span></h3>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:24px;">Ready to build your digital success story? Let's create a website that works as hard as you do.</p>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20website%20for%20my%20business!" target="_blank" class="btn-whatsapp" style="justify-content:center;">💬 Let's Talk</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cs-hub-cta">
+    <div class="section-tag" style="justify-content:center;">Start Your Journey</div>
+    <h2 class="section-title" style="margin-bottom:18px;">Ready to Be Our<br><span>Next Success Story?</span></h2>
+    <p class="section-sub" style="margin:0 auto 36px;">Whether you're a doctor, gym owner, contractor, or running a student hostel — we build websites that generate real inquiries. No templates. No fluff. Pure results.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="btn-whatsapp">💬 Free WhatsApp Audit</a>
+      <a href="../contact.html" class="btn-primary">Get a Custom Quote →</a>
+      <a href="../services.html" class="btn-secondary">View Services</a>
+    </div>
+  </section>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta-bar">
+    <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+    <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+    <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+    <a href="../contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+        <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+        </div>
+        <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="../case-studies/index.html">Case Studies</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+          <li><a href="../demos/index.html">Live Demos</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Local SEO</h4>
+        <ul class="footer-links">
+          <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+          <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+          <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+          <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+          <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+          <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../sitemap.xml">Sitemap</a>
+      </div>
+      <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>

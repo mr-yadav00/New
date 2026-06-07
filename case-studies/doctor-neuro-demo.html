@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Neuro Case Study — Full-Stack Next.js Medical Website | SiteLab India</title>
+  <meta name="description" content="How SiteLab India built Doctor Neuro, a full-stack Next.js neurology clinic website with appointment booking, admin panel, and Supabase backend.">
+  <link rel="canonical" href="https://sitelabindia.in/case-studies/doctor-neuro-demo.html">
+  <meta property="og:title" content="Doctor Neuro Case Study — Full-Stack Next.js Medical Website | SiteLab India">
+  <meta property="og:description" content="How SiteLab India built Doctor Neuro, a full-stack Next.js neurology clinic website with appointment booking, admin panel, and Supabase backend.">
+  <meta property="og:url" content="https://sitelabindia.in/case-studies/doctor-neuro-demo.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .cs-hero-detail {
+      padding: 130px 6% 60px;
+      background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cs-hero-detail::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(139,92,246,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139,92,246,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 85% 85% at center, black 30%, transparent 80%);
+    }
+    .cs-hero-detail > * { position: relative; z-index: 1; }
+    .cs-layout {
+      display: grid; grid-template-columns: 1fr 320px;
+      gap: 48px; max-width: 1200px; margin: 0 auto; padding: 60px 6%;
+    }
+    .cs-sidebar { position: sticky; top: 90px; align-self: start; }
+    .cs-sidebar-card {
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 28px; margin-bottom: 20px;
+    }
+    .cs-sidebar-card h4 {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 16px;
+    }
+    .cs-sidebar-stat {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem;
+    }
+    .cs-sidebar-stat:last-child { border-bottom: none; }
+    .cs-sidebar-stat span:first-child { color: var(--muted); }
+    .cs-sidebar-stat span:last-child { color: var(--white); font-weight: 600; }
+    .cs-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .cs-result-card {
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 24px; text-align: center;
+    }
+    .cs-result-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: var(--gold); line-height: 1; margin-bottom: 6px;
+    }
+    .cs-result-label { font-size: 0.78rem; color: var(--muted); }
+    .cs-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .cs-feature-item {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 14px 16px;
+      display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--muted);
+    }
+    .cs-feature-item::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .cs-seo-keyword {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,184,0,0.07); border: 1px solid rgba(255,184,0,0.18);
+      color: var(--gold); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-tech-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25);
+      color: var(--violet); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-tech-badge-gold {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.3);
+      color: var(--gold); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-cta-section {
+      background: linear-gradient(135deg, rgba(139,92,246,0.07) 0%, rgba(255,184,0,0.04) 100%);
+      border: 1px solid rgba(139,92,246,0.2);
+      border-radius: 20px; padding: 48px; text-align: center; margin: 60px 0;
+    }
+    .arch-diagram {
+      background: var(--bg2); border: 1px solid rgba(139,92,246,0.2);
+      border-radius: var(--radius); padding: 32px; margin: 20px 0;
+    }
+    .arch-layer {
+      display: flex; align-items: center; gap: 16px; padding: 14px 18px;
+      border-radius: 10px; margin-bottom: 10px; font-size: 0.88rem;
+    }
+    .arch-layer:last-child { margin-bottom: 0; }
+    .arch-layer-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .arch-layer h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
+    .arch-layer p { color: var(--muted); font-size: 0.78rem; margin: 0; }
+    .arch-frontend { background: rgba(255,184,0,0.06); border: 1px solid rgba(255,184,0,0.15); }
+    .arch-backend { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15); }
+    .arch-db { background: rgba(37,211,102,0.06); border: 1px solid rgba(37,211,102,0.15); }
+    .arch-deploy { background: rgba(96,165,250,0.06); border: 1px solid rgba(96,165,250,0.15); }
+    @media (max-width: 900px) {
+      .cs-layout { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; }
+      .cs-feature-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) { .cs-result-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Doctor Neuro — How We Built a Full-Stack Neurology Clinic Website with Next.js and Supabase",
+    "description": "Case study: SiteLab India built a full-stack Next.js 14 neurology clinic website with Supabase database backend, online appointment booking, admin panel, and slot management for Doctor Neuro.",
+    "author": { "@type": "Person", "name": "Kapil Ahir" },
+    "publisher": { "@type": "Organization", "name": "SiteLab India", "url": "https://sitelabindia.in" },
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-06-03",
+    "url": "https://sitelabindia.in/case-studies/doctor-neuro-demo.html",
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+    "keywords": "Next.js medical website, Supabase appointment booking, neurology clinic website, full-stack doctor website",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://sitelabindia.in/case-studies/" },
+        { "@type": "ListItem", "position": 3, "name": "Doctor Neuro Demo", "item": "https://sitelabindia.in/case-studies/doctor-neuro-demo.html" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="../portfolio.html">Portfolio ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+          <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+          <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+          <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+          <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="../products/lifeos.html">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/lifeos.html">🧬 LifeOS</a>
+        </div>
+      </li>
+      <li><a href="../case-studies/index.html" class="active">Case Studies</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="../services.html" onclick="toggleMenu()">Services</a>
+    <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="../products/lifeos.html" onclick="toggleMenu()">Products</a>
+    <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+    <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+    <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+    <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../case-studies/index.html">Case Studies</a>
+    <span class="sep">›</span>
+    <span class="current">Doctor Neuro</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="cs-hero-detail">
+    <div class="cs-meta">
+      <span class="cs-tag cs-tag-gold">🧠 Neurology / Healthcare</span>
+      <span class="cs-tag cs-tag-violet">⚡ Full-Stack Next.js</span>
+      <span class="cs-tag" style="background:rgba(37,211,102,0.1);color:var(--green);border:1px solid rgba(37,211,102,0.25);">✅ Completed</span>
+    </div>
+    <h1 class="section-title" style="max-width:800px;">Doctor Neuro —<br><span>How We Built a Full-Stack Neurology Clinic Website</span></h1>
+    <p class="section-sub" style="max-width:640px;margin-top:18px;">Our most technically ambitious project: a full-stack Next.js 14 + TypeScript + Supabase neurology clinic platform with real appointment booking, admin dashboard, slot management, and production-grade deployment on Netlify.</p>
+    <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
+      <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary">View Live Demo ↗</a>
+      <a href="../contact.html" class="btn-secondary">Get a Full-Stack Website</a>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+      <span class="cs-tech-badge-gold">Next.js 14</span>
+      <span class="cs-tech-badge-gold">TypeScript</span>
+      <span class="cs-tech-badge-gold">Supabase</span>
+      <span class="cs-tech-badge-gold">Netlify</span>
+    </div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="cs-layout">
+    <main>
+
+      <!-- THE PROBLEM -->
+      <div class="cs-section reveal">
+        <h2>🔴 The Complex Problem</h2>
+        <p>Doctor Neuro represented a fundamentally different challenge from a standard business website. This wasn't a brochure — it was a medical operations platform. The client needed a digital system that could handle the full patient journey from discovery to confirmed appointment, while giving the clinic's admin team complete control over scheduling.</p>
+        <p>The technical and business challenges were multi-layered:</p>
+        <ul class="cs-list">
+          <li><strong>Real Appointment Booking:</strong> Patients needed to book actual time slots, not just submit a "callback request" form. This required real-time slot availability, conflict prevention, and booking confirmation.</li>
+          <li><strong>Admin Control Panel:</strong> The clinic needed a backend dashboard where staff could view all bookings, manage appointment status, block unavailable slots, and see the full schedule at a glance.</li>
+          <li><strong>Slot Management System:</strong> Doctor availability changes weekly. The system needed to support dynamic slot creation, modification, and blocking without requiring a developer each time.</li>
+          <li><strong>High-Trust Medical Credibility:</strong> Neurology is a high-stakes specialty. The website design needed to immediately communicate clinical authority, professional credentials, and patient safety — standards significantly higher than general practice.</li>
+          <li><strong>Performance &amp; SEO at Scale:</strong> A full-stack React application needed to be server-rendered for SEO performance — ruling out a pure client-side SPA and requiring Next.js App Router with Server Components.</li>
+          <li><strong>Future-Proof Architecture:</strong> The clinic planned to add additional doctors and specialties — the system needed to be architected for horizontal scalability from day one.</li>
+        </ul>
+        <p>This required moving beyond SiteLab India's standard HTML/CSS toolkit and deploying a full-stack web application with a real database backend, real-time capabilities, and admin tooling — all while maintaining the design quality and SEO standards of every SiteLab project.</p>
+      </div>
+
+      <!-- OUR SOLUTION -->
+      <div class="cs-section reveal">
+        <h2>✅ Our Full-Stack Solution</h2>
+        <p>SiteLab India designed and built Doctor Neuro as a complete full-stack web application using the <strong>Next.js 14 App Router</strong> with <strong>TypeScript</strong>, backed by a <strong>Supabase PostgreSQL database</strong>, and deployed to production on <strong>Netlify</strong>.</p>
+        <p>The architecture was designed around three user personas: the <strong>patient</strong> (discovers, reads, books), the <strong>clinic admin</strong> (manages schedule, views bookings), and the <strong>search engine</strong> (indexes, ranks, serves rich results).</p>
+
+        <!-- ARCHITECTURE DIAGRAM -->
+        <div class="arch-diagram">
+          <h4 style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:18px;">System Architecture</h4>
+          <div class="arch-layer arch-frontend">
+            <div class="arch-layer-icon">⚛️</div>
+            <div>
+              <h4>Frontend — Next.js 14 App Router</h4>
+              <p>React Server Components + TypeScript — Static generation for SEO pages, dynamic rendering for booking flow. Tailwind CSS for styling. shadcn/ui components.</p>
+            </div>
+          </div>
+          <div class="arch-layer arch-backend">
+            <div class="arch-layer-icon">🔧</div>
+            <div>
+              <h4>Backend — Next.js API Routes + Server Actions</h4>
+              <p>Type-safe server actions for form submissions. API routes for booking creation, slot queries, and admin operations. Zod validation on all inputs.</p>
+            </div>
+          </div>
+          <div class="arch-layer arch-db">
+            <div class="arch-layer-icon">🗄️</div>
+            <div>
+              <h4>Database — Supabase PostgreSQL</h4>
+              <p>Structured schema for appointments, time slots, and doctor profiles. Row Level Security (RLS) for data protection. Real-time subscriptions for live admin updates.</p>
+            </div>
+          </div>
+          <div class="arch-layer arch-deploy">
+            <div class="arch-layer-icon">🚀</div>
+            <div>
+              <h4>Deployment — Netlify</h4>
+              <p>Edge Functions for global low-latency. Automatic CI/CD from GitHub. Environment variable management. Custom domain with SSL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURES BUILT -->
+      <div class="cs-section reveal">
+        <h2>⚙️ Features Built</h2>
+        <p>Doctor Neuro was delivered as a comprehensive medical platform with features across three distinct user-facing surfaces:</p>
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:10px;">Patient-Facing Features</h3>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-item">Neurology specialty pages with condition information (Epilepsy, Migraine, Parkinson's, Stroke, etc.)</div>
+            <div class="cs-feature-item">Live appointment booking form with date picker and available slot display</div>
+            <div class="cs-feature-item">Doctor profile with credentials, specializations, and clinical biography</div>
+            <div class="cs-feature-item">Real-time slot availability — only bookable slots shown, no double-booking possible</div>
+            <div class="cs-feature-item">Booking confirmation page with appointment summary and WhatsApp follow-up</div>
+            <div class="cs-feature-item">FAQ section with neurology-specific patient questions and schema markup</div>
+          </div>
+        </div>
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:1rem;font-weight:700;color:var(--violet);margin-bottom:10px;">Admin Dashboard Features</h3>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-item">Secure admin login with Supabase Auth (email + password)</div>
+            <div class="cs-feature-item">Full appointments list with status management (Pending, Confirmed, Cancelled, Completed)</div>
+            <div class="cs-feature-item">Slot management interface — add, edit, block, or delete time slots without code changes</div>
+            <div class="cs-feature-item">Daily/weekly schedule view for quick clinic management</div>
+            <div class="cs-feature-item">Patient contact details accessible from booking records for follow-up calls</div>
+            <div class="cs-feature-item">Real-time dashboard updates as new bookings arrive via Supabase subscriptions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🔍 SEO Strategy for a Next.js Medical Site</h2>
+        <p>Building on Next.js meant leveraging App Router's Server Components for truly optimal SEO — every page is server-rendered HTML that Google can crawl and index without JavaScript execution, unlike a traditional React SPA.</p>
+        <p><strong>Primary Keywords Targeted:</strong></p>
+        <div style="margin-bottom:18px;">
+          <span class="cs-seo-keyword">Neurologist near me</span>
+          <span class="cs-seo-keyword">Neurology clinic appointment</span>
+          <span class="cs-seo-keyword">Epilepsy specialist doctor</span>
+          <span class="cs-seo-keyword">Migraine treatment doctor</span>
+          <span class="cs-seo-keyword">Parkinson's disease specialist</span>
+          <span class="cs-seo-keyword">Online neurology appointment booking</span>
+        </div>
+        <ul class="cs-list">
+          <li><strong>Next.js Metadata API:</strong> Dynamic, per-page metadata using Next.js 14's Metadata API — ensuring every specialty page has unique, optimized titles, descriptions, and OG tags generated server-side.</li>
+          <li><strong>Structured Data (JSON-LD):</strong> MedicalBusiness, Physician, MedicalSpecialty, and MedicalCondition schema markup implemented — giving Google rich result signals across all specialty pages.</li>
+          <li><strong>Static Generation for Content Pages:</strong> Condition information pages (Epilepsy, Migraine, etc.) statically generated at build time for maximum Core Web Vitals performance scores.</li>
+          <li><strong>Sitemap Generation:</strong> Automatic XML sitemap generated via Next.js sitemap route — ensuring all pages are discovered and indexed promptly.</li>
+          <li><strong>Semantic HTML Structure:</strong> TypeScript component library built with semantic HTML5 elements — article, section, header, nav, aside — for clean document outline that aids both accessibility and SEO.</li>
+        </ul>
+      </div>
+
+      <!-- GEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🤖 GEO Strategy for AI Medical Search</h2>
+        <p>Medical AI search is particularly high-stakes — AI models like Google SGE, ChatGPT, and Perplexity are now primary research tools for patients seeking specialist information. The Doctor Neuro GEO strategy was designed to make the clinic's information AI-consumable at every layer.</p>
+        <ul class="cs-list">
+          <li><strong>Medical Condition Entities:</strong> Each neurological condition (Epilepsy, Migraine, Parkinson's, Stroke, Neuropathy) treated as a named medical entity with structured, accurate, evidence-based content — directly mirroring what AI models reference when generating medical information responses.</li>
+          <li><strong>FAQ Schema for Clinical Questions:</strong> Patient questions in natural language — "What is the difference between a neurologist and a neurosurgeon?", "How do I know if I need to see a neurologist?", "Can I book a neurology appointment online?" — marked up with FAQ schema for direct AI extraction.</li>
+          <li><strong>Physician Entity Optimization:</strong> The neurologist's credentials, specializations, hospital affiliations, and location data structured as a consistent Physician entity across all schema — enabling accurate AI-generated responses to branded queries.</li>
+          <li><strong>Appointment Booking Intent Signals:</strong> Content and schema explicitly signal online booking availability — critical for AI models responding to "book a neurologist appointment" queries.</li>
+        </ul>
+      </div>
+
+      <!-- MOBILE OPTIMIZATION -->
+      <div class="cs-section reveal">
+        <h2>📱 Mobile Optimization</h2>
+        <p>Neurology patients often include elderly patients or caretakers who may be less technically fluent — the mobile experience required exceptional clarity and simplicity in addition to standard responsiveness:</p>
+        <ul class="cs-list">
+          <li>Tailwind CSS responsive design — all layouts fluid from 320px to 2560px with zero media query complexity.</li>
+          <li>Appointment booking form optimized for mobile — large tap targets, clear field labels, native date picker integration on iOS and Android.</li>
+          <li>Accessible font sizes — minimum 16px body text throughout, with proper contrast ratios meeting WCAG AA standards.</li>
+          <li>Floating WhatsApp button for users who prefer calling or messaging over form submission — always visible without blocking content.</li>
+          <li>Admin dashboard fully functional on tablet — clinic staff can manage appointments from an iPad between patient consultations.</li>
+          <li>Fast loading via Next.js image optimization — medical imagery compressed and served in WebP format with lazy loading.</li>
+        </ul>
+      </div>
+
+      <!-- TECHNOLOGY -->
+      <div class="cs-section reveal">
+        <h2>🛠️ Technology Stack Deep Dive</h2>
+        <p>Doctor Neuro represents SiteLab India's full-stack capability — demonstrating that we can architect and deliver production-grade web applications, not just static websites:</p>
+        <div style="margin-bottom:20px;">
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:10px;color:var(--gold);">Frontend</h3>
+          <span class="cs-tech-badge">Next.js 14 App Router</span>
+          <span class="cs-tech-badge">TypeScript</span>
+          <span class="cs-tech-badge">React Server Components</span>
+          <span class="cs-tech-badge">Tailwind CSS</span>
+          <span class="cs-tech-badge">shadcn/ui</span>
+        </div>
+        <div style="margin-bottom:20px;">
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:10px;color:var(--violet);">Backend &amp; Database</h3>
+          <span class="cs-tech-badge">Supabase PostgreSQL</span>
+          <span class="cs-tech-badge">Supabase Auth</span>
+          <span class="cs-tech-badge">Supabase Realtime</span>
+          <span class="cs-tech-badge">Next.js Server Actions</span>
+          <span class="cs-tech-badge">Zod Validation</span>
+        </div>
+        <div style="margin-bottom:20px;">
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:10px;color:var(--green);">Infrastructure &amp; SEO</h3>
+          <span class="cs-tech-badge">Netlify Edge Functions</span>
+          <span class="cs-tech-badge">Next.js Metadata API</span>
+          <span class="cs-tech-badge">JSON-LD Schema</span>
+          <span class="cs-tech-badge">next/image Optimization</span>
+          <span class="cs-tech-badge">Auto XML Sitemap</span>
+        </div>
+        <p>The choice of Supabase as the database layer was deliberate — it provides a PostgreSQL database with built-in Auth, Row Level Security, and real-time subscriptions, while removing the operational complexity of managing a separate backend server. This keeps ongoing infrastructure costs minimal while providing enterprise-grade capabilities.</p>
+        <p>TypeScript was used end-to-end — including server actions, database query types generated from the Supabase schema, and all React components — ensuring type safety and eliminating an entire class of runtime errors that plague production medical applications.</p>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="cs-section reveal">
+        <h2>📈 Results Achieved</h2>
+        <p>Doctor Neuro demonstrates what becomes possible when a medical practice moves from zero online presence to a complete, functional digital platform:</p>
+        <div class="cs-result-grid">
+          <div class="cs-result-card">
+            <div class="cs-result-val">100%</div>
+            <div class="cs-result-label">Online Appointment Booking — Zero Phone Dependency</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">0</div>
+            <div class="cs-result-label">Double-Bookings — Real-time Conflict Prevention</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">A+</div>
+            <div class="cs-result-label">Core Web Vitals Score (SSR)</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">∞</div>
+            <div class="cs-result-label">Scalability — Multi-Doctor Ready Architecture</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <ul class="cs-list">
+            <li><strong>Online Appointment System Operational:</strong> Patients can self-schedule appointments 24/7 without calling the clinic — reducing administrative burden and eliminating after-hours missed booking opportunities.</li>
+            <li><strong>Real-time Conflict Prevention:</strong> The Supabase-backed slot system ensures no two patients can ever book the same slot — a technical requirement that traditional contact forms completely fail to provide.</li>
+            <li><strong>Admin Efficiency:</strong> Clinic staff can view, confirm, and manage all appointments from a single dashboard — replacing scattered WhatsApp messages and paper appointment books with a centralized, searchable record.</li>
+            <li><strong>SEO Foundation for Specialty Pages:</strong> Server-rendered specialty condition pages are fully indexable, providing a strong foundation for ranking in neurology searches over time.</li>
+            <li><strong>Proof of Full-Stack Capability:</strong> Doctor Neuro demonstrates that SiteLab India can build production-grade applications beyond static websites — opening the door to complex digital products for medical clients across India.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cs-cta-section reveal">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🧠</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;margin-bottom:14px;">Need a Full-Stack<br><span style="color:var(--gold);">Medical Web Application?</span></h2>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:560px;margin:0 auto 28px;">Whether you need a simple brochure website or a complete appointment booking platform like Doctor Neuro, SiteLab India has the technical depth to deliver. Let's discuss your requirements.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20need%20a%20full-stack%20medical%20website%20with%20appointment%20booking!" target="_blank" class="btn-whatsapp">💬 WhatsApp Kapil</a>
+          <a href="../contact.html" class="btn-primary">Get a Custom Quote →</a>
+        </div>
+        <p style="color:var(--muted);font-size:0.8rem;margin-top:18px;">Also see: <a href="../services.html" style="color:var(--gold);">Full-Stack Services</a> · <a href="../demos/doctor-neuro-demo.html" style="color:var(--gold);">Live Demo</a> · <a href="../portfolio.html" style="color:var(--gold);">Portfolio</a> · <a href="../local-seo/doctor-website-kota.html" style="color:var(--gold);">Doctor Website Kota</a> · <a href="../case-studies/index.html" style="color:var(--gold);">More Case Studies</a></p>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="cs-sidebar">
+      <div class="cs-sidebar-card">
+        <h4>Project Details</h4>
+        <div class="cs-sidebar-stat"><span>Client</span><span>Doctor Neuro</span></div>
+        <div class="cs-sidebar-stat"><span>Industry</span><span>Neurology / Healthcare</span></div>
+        <div class="cs-sidebar-stat"><span>Type</span><span>Full-Stack Web App</span></div>
+        <div class="cs-sidebar-stat"><span>Database</span><span>Supabase PostgreSQL</span></div>
+        <div class="cs-sidebar-stat"><span>Hosting</span><span>Netlify</span></div>
+        <div class="cs-sidebar-stat"><span>Auth</span><span>Supabase Auth</span></div>
+      </div>
+
+      <div class="cs-sidebar-card" style="border-color:rgba(139,92,246,0.25);">
+        <h4>Tech Stack</h4>
+        <div class="cs-sidebar-stat"><span>Framework</span><span>Next.js 14</span></div>
+        <div class="cs-sidebar-stat"><span>Language</span><span>TypeScript</span></div>
+        <div class="cs-sidebar-stat"><span>Styling</span><span>Tailwind CSS</span></div>
+        <div class="cs-sidebar-stat"><span>Database</span><span>Supabase</span></div>
+        <div class="cs-sidebar-stat"><span>Deploy</span><span>Netlify</span></div>
+        <div class="cs-sidebar-stat"><span>Schema</span><span>JSON-LD</span></div>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Quick Actions</h4>
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;">View Live Demo ↗</a>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20full-stack%20medical%20website!" target="_blank" class="btn-whatsapp" style="width:100%;justify-content:center;margin-bottom:10px;">💬 WhatsApp Now</a>
+        <a href="../case-studies/index.html" class="btn-secondary" style="width:100%;justify-content:center;">← All Case Studies</a>
+      </div>
+
+      <div class="cs-sidebar-card" style="border-color:rgba(255,184,0,0.2);background:linear-gradient(135deg,rgba(255,184,0,0.04),rgba(139,92,246,0.03));">
+        <h4>⭐ Most Complex Project</h4>
+        <p style="color:var(--muted);font-size:0.82rem;line-height:1.65;">Doctor Neuro is our flagship technical showcase — demonstrating SiteLab India's full-stack capabilities beyond standard business websites.</p>
+        <a href="../contact.html" style="color:var(--gold);font-size:0.82rem;font-weight:600;text-decoration:none;">Discuss a complex project →</a>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Related Projects</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="sharma-care-clinic.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏥 Sharma Care Clinic →</a>
+          <a href="yadav-fitness-club.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">💪 Yadav Fitness Club →</a>
+          <a href="lekhraj-contractor.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏗️ Lekhraj Contractor →</a>
+          <a href="radha-raman-residency.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏠 Radha Raman Residency →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta-bar">
+    <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+    <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+    <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+    <a href="../contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+  </div>
+
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+        <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+        </div>
+        <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="../case-studies/index.html">Case Studies</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+          <li><a href="../demos/index.html">Live Demos</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Local SEO</h4>
+        <ul class="footer-links">
+          <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+          <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+          <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+          <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+          <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+          <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../sitemap.xml">Sitemap</a>
+      </div>
+      <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design &amp; SEO Services Kota | SiteLab India</title>
+  <meta name="description" content="SiteLab India offers premium website design, local SEO, GEO optimization, and digital visibility services for doctors, gyms, contractors, and businesses in Kota, Rajasthan.">
+  <link rel="canonical" href="https://sitelabindia.in/services.html">
+  <meta property="og:title" content="Web Design &amp; SEO Services Kota | SiteLab India">
+  <meta property="og:description" content="Expert web design, local SEO, and GEO optimization services for clinics, gyms, contractors, and businesses in Kota, Rajasthan. Starting at ₹2,499.">
+  <meta property="og:url" content="https://sitelabindia.in/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sitelabindia.in/assets/images/sitelab-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Design &amp; SEO Services Kota | SiteLab India">
+  <meta name="twitter:description" content="Premium web design, SEO, and GEO optimization services in Kota, Rajasthan starting at ₹2,499.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://sitelabindia.in/#agency",
+    "name": "SiteLab India",
+    "url": "https://sitelabindia.in",
+    "telephone": "+917878574692",
+    "priceRange": "₹2499 - ₹4999+",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Talwandi",
+      "addressLocality": "Kota",
+      "addressRegion": "Rajasthan",
+      "postalCode": "324005",
+      "addressCountry": "IN"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SiteLab India Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Doctor & Clinic Websites",
+            "description": "Premium medical websites for doctors, clinics, and healthcare providers in Kota, Rajasthan. Includes appointment booking, WhatsApp integration, and local SEO."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gym & Fitness Websites",
+            "description": "High-energy fitness and gym websites with membership pricing, schedule displays, and lead generation tools."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Local SEO Services",
+            "description": "Comprehensive local SEO for businesses in Kota to rank higher on Google Maps and local search results."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GEO Optimization",
+            "description": "AI search optimization to ensure your business appears in ChatGPT, Gemini, and Perplexity search results."
+          }
+        }
+      ]
+    },
+    "sameAs": ["https://www.instagram.com/sitelabindia"]
+  }
+  </script>
+
+  <style>
+    .services-hero {
+      padding: 140px 6% 60px;
+      background: linear-gradient(180deg, rgba(8,8,17,1) 0%, rgba(14,15,32,0.98) 100%);
+      position: relative; overflow: hidden;
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 55% at 75% 50%, rgba(139,92,246,0.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 45% 45% at 20% 80%, rgba(255,184,0,0.05) 0%, transparent 60%);
+    }
+    .services-hero > * { position: relative; z-index: 1; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .service-card-full {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 36px 28px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .service-card-full::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--violet), var(--gold), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .service-card-full:hover { transform: translateY(-8px); border-color: rgba(139,92,246,0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .service-card-full:hover::before { opacity: 1; }
+    .service-card-icon {
+      width: 56px; height: 56px;
+      background: var(--violet-glow); border: 1px solid rgba(139,92,246,0.25);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 22px; flex-shrink: 0;
+    }
+    .service-card-full h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+    .service-card-full p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin-bottom: 20px; }
+    .service-feature-list { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; flex: 1; }
+    .service-feature-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.85rem; color: var(--white-soft); }
+    .service-feature-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .service-card-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+    .service-card-actions a {
+      flex: 1; min-width: 120px;
+      padding: 10px 16px; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700;
+      text-align: center; text-decoration: none;
+      transition: all 0.2s; letter-spacing: 0.3px;
+    }
+    .sca-primary { background: var(--gold); color: #000; }
+    .sca-primary:hover { background: var(--gold-dim); transform: translateY(-2px); }
+    .sca-secondary { background: var(--glass); color: var(--white); border: 1px solid var(--glass-border); }
+    .sca-secondary:hover { border-color: rgba(139,92,246,0.4); color: var(--gold); }
+
+    .seo-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .seo-pillar-link {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 18px 20px;
+      text-decoration: none; color: var(--white-soft);
+      font-size: 0.88rem; font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.2s;
+    }
+    .seo-pillar-link:hover { border-color: rgba(255,184,0,0.35); color: var(--gold); background: var(--gold-subtle); transform: translateY(-2px); }
+    .seo-pillar-link span { font-size: 1.1rem; }
+
+    .cs-promo {
+      background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(255,184,0,0.06));
+      border: 1px solid rgba(139,92,246,0.25);
+      border-radius: var(--radius); padding: 48px;
+      text-align: center;
+    }
+    .portfolio-promo {
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 48px;
+      text-align: center;
+    }
+    .bottom-cta-section {
+      background: linear-gradient(135deg, rgba(255,184,0,0.08), rgba(139,92,246,0.06));
+      border-radius: var(--radius);
+      padding: 64px 48px;
+      text-align: center;
+      border: 1px solid rgba(255,184,0,0.15);
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .bottom-cta-section { padding: 40px 24px; }
+      .cs-promo, .portfolio-promo { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Site<span>Lab</span> India</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li class="nav-dropdown">
+      <a href="portfolio.html">Portfolio ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+        <a href="demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+        <a href="demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+        <a href="demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+        <a href="demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="products/lifeos.html">Products ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="products/lifeos.html">🧬 LifeOS</a>
+      </div>
+    </li>
+    <li><a href="case-studies/index.html">Case Studies</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="services.html" onclick="toggleMenu()">Services</a>
+  <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
+  <a href="products/lifeos.html" onclick="toggleMenu()">Products</a>
+  <a href="case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+  <a href="blog/index.html" onclick="toggleMenu()">Blog</a>
+  <a href="pricing.html" onclick="toggleMenu()">Pricing</a>
+  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">›</span>
+  <span class="current">Services</span>
+</div>
+
+<!-- HERO -->
+<section class="services-hero">
+  <div class="section-tag">What We Do</div>
+  <h1 class="section-title">Our <span>Services</span></h1>
+  <p class="section-sub" style="max-width: 640px;">
+    SiteLab India delivers end-to-end digital solutions for doctors, gyms, contractors, PG owners, and ambitious businesses in Kota, Rajasthan. From high-performance websites and local SEO to GEO optimization for AI search engines — we build complete digital ecosystems that generate real leads, build trust, and grow your business. Every project is personally handled by founder Kapil Ahir.
+  </p>
+
+  <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px;">
+    <a href="pricing.html" class="btn-primary">View Pricing →</a>
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20to%20discuss%20a%20service!" target="_blank" class="btn-whatsapp">💬 Get Free Audit</a>
+  </div>
+</section>
+
+<!-- TRUST BANNER -->
+<div class="trust-banner">
+  <div class="trust-item">
+    <span class="trust-icon">⚡</span>
+    <div class="trust-text">
+      <h4>72-Hr Delivery</h4>
+      <p>From approval to live site</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">📍</span>
+    <div class="trust-text">
+      <h4>Based in Kota, RJ</h4>
+      <p>Local support &amp; consultation</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">✅</span>
+    <div class="trust-text">
+      <h4>Pay After Approval</h4>
+      <p>Zero upfront risk</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">🔍</span>
+    <div class="trust-text">
+      <h4>Full SEO System</h4>
+      <p>Schema, maps &amp; local SEO</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE CARDS GRID -->
+<section style="background: var(--bg); padding-top: 60px;">
+  <div style="text-align: center; max-width: 620px; margin: 0 auto 60px;">
+    <div class="section-tag" style="justify-content: center;">All Services</div>
+    <h2 class="section-title">Everything You Need to <span>Dominate Locally</span></h2>
+    <p class="section-sub" style="margin: 0 auto;">Eight focused service offerings, each crafted to solve a real business problem for local professionals and entrepreneurs in Kota.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- 1. Doctor & Clinic -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">🏥</div>
+      <h3>Doctor &amp; Clinic Websites</h3>
+      <p>We build medical-grade, trust-first websites specifically designed for doctors, specialists, dentists, and multi-specialty clinics in Kota. Each site is optimized to convert patient searches into WhatsApp inquiries and appointment bookings. Our clinic websites include structured schema markup that helps Google understand your specialties, location, and credentials — getting you ranked faster. Every element is designed to build immediate credibility with patients who are searching for healthcare online.</p>
+      <ul class="service-feature-list">
+        <li>Doctor profile, qualifications &amp; specialties section</li>
+        <li>Appointment booking widget with WhatsApp integration</li>
+        <li>Google Maps embed + Patient directions CTA</li>
+        <li>Medical schema markup for enhanced Google visibility</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="demos/doctor-neuro-demo.html" class="sca-primary">See Neuro Demo</a>
+        <a href="demos/sharma-care-clinic.html" class="sca-secondary">See Clinic Demo</a>
+      </div>
+    </div>
+
+    <!-- 2. Gym & Fitness -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">💪</div>
+      <h3>Gym &amp; Fitness Websites</h3>
+      <p>High-energy, bold fitness websites built to convert casual browsers into paid gym members. We design with the psychology of motivation in mind — using strong visuals, clear membership tiers, trainer profiles, and seamless lead capture. Your gym's website will load instantly on mobile, showcase real transformation results, and make it effortless for prospects to send a WhatsApp inquiry. Fitness clients expect energy — we deliver it in every pixel.</p>
+      <ul class="service-feature-list">
+        <li>Membership pricing matrix with comparison table</li>
+        <li>Trainer profiles &amp; schedule display</li>
+        <li>Transformation gallery with before/after showcase</li>
+        <li>Direct WhatsApp &amp; call CTAs above the fold</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="demos/yadav-fitness-club.html" class="sca-primary">See Gym Demo</a>
+        <a href="contact.html" class="sca-secondary">Get Quote</a>
+      </div>
+    </div>
+
+    <!-- 3. Contractor & Real Estate -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">🏗️</div>
+      <h3>Contractor &amp; Real Estate Websites</h3>
+      <p>Showcase your construction projects, real estate listings, and professional expertise with a website that commands authority in Kota. Contractors and real estate agents need websites that demonstrate capability — our designs feature project galleries, client testimonials, service areas, and easy quote request forms. We make it simple for prospective clients to see your past work and instantly reach out via WhatsApp or phone for consultations.</p>
+      <ul class="service-feature-list">
+        <li>Project portfolio gallery with before/after sliders</li>
+        <li>Service areas map &amp; coverage zones</li>
+        <li>Quote request form linked to WhatsApp</li>
+        <li>Trust badges, certifications &amp; testimonials section</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="demos/lekhraj-contractor.html" class="sca-primary">See Demo</a>
+        <a href="contact.html" class="sca-secondary">Get Quote</a>
+      </div>
+    </div>
+
+    <!-- 4. PG & Residency -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">🏠</div>
+      <h3>PG &amp; Residency Websites</h3>
+      <p>Kota is one of India's largest coaching hubs, with thousands of students arriving every year looking for safe, comfortable accommodation. A professional PG website gives you instant credibility over WhatsApp-only operators. We create clean, informative websites that showcase room types, amenities, fee structures, and photos — helping parents and students make booking decisions with confidence. Our PG sites are SEO-optimized so students searching "PG near Kota coaching" find you first.</p>
+      <ul class="service-feature-list">
+        <li>Room type listings with pricing &amp; availability</li>
+        <li>Amenities showcase with icon-based visual layout</li>
+        <li>Virtual room gallery &amp; photo tour</li>
+        <li>Instant booking inquiry via WhatsApp</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="demos/radha-raman-residency.html" class="sca-primary">See Demo</a>
+        <a href="contact.html" class="sca-secondary">Get Quote</a>
+      </div>
+    </div>
+
+    <!-- 5. Local SEO -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">🔍</div>
+      <h3>Local SEO Services</h3>
+      <p>Being on Google's first page for local searches is the most powerful source of free, consistent leads for any local business. Our local SEO service covers everything from Google Business Profile optimization and citation building to on-page keyword strategy and schema markup implementation. We target high-intent searches like "best dentist in Kota" or "PG near Allen coaching Kota" — searches by people who are ready to become customers right now.</p>
+      <ul class="service-feature-list">
+        <li>Google Business Profile setup &amp; optimization</li>
+        <li>Local keyword research &amp; on-page SEO</li>
+        <li>Schema markup implementation (JSON-LD)</li>
+        <li>Monthly ranking reports &amp; performance tracking</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="local-seo/seo-services-kota.html" class="sca-primary">Learn More</a>
+        <a href="contact.html" class="sca-secondary">Get Quote</a>
+      </div>
+    </div>
+
+    <!-- 6. GEO Optimization -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">🌐</div>
+      <h3>GEO Optimization (AI Search)</h3>
+      <p>The next frontier of search is here — ChatGPT, Google Gemini, and Perplexity are now being used by millions to find local businesses and services. GEO (Generative Engine Optimization) ensures your business is recommended when someone asks an AI assistant "best doctor in Kota" or "reliable web designer in Rajasthan." We structure your content, citations, and authority signals so AI search engines include you in their generated answers — a huge competitive advantage most local businesses don't yet have.</p>
+      <ul class="service-feature-list">
+        <li>AI-friendly content structure &amp; entity optimization</li>
+        <li>Citation building across high-authority directories</li>
+        <li>Authoritative content creation for AI referencing</li>
+        <li>Monitoring &amp; reporting on AI search appearances</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="authority/geo-authority.html" class="sca-primary">Learn More</a>
+        <a href="contact.html" class="sca-secondary">Get Quote</a>
+      </div>
+    </div>
+
+    <!-- 7. LifeOS -->
+    <div class="service-card-full reveal" style="border-color: rgba(139,92,246,0.25); background: linear-gradient(160deg, rgba(139,92,246,0.06), rgba(255,184,0,0.03));">
+      <div class="service-card-icon" style="background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.4);">🧬</div>
+      <h3>LifeOS Product</h3>
+      <p>LifeOS is our flagship personal productivity system — a beautifully designed all-in-one life management platform built for students, professionals, and entrepreneurs. Featuring daily routines, goal tracking, habit systems, a knowledge vault, and mood analytics, LifeOS helps you design and live an intentional, high-performance life. Built with the same premium design philosophy as our client websites, LifeOS is the tool we use internally — and now it's available to you.</p>
+      <ul class="service-feature-list">
+        <li>Daily routine builder &amp; habit tracker</li>
+        <li>Goal setting system with milestone tracking</li>
+        <li>Knowledge vault &amp; second brain system</li>
+        <li>Mood analytics &amp; weekly performance reviews</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="products/lifeos.html" class="sca-primary">Explore LifeOS</a>
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="sca-secondary">Live Preview ↗</a>
+      </div>
+    </div>
+
+    <!-- 8. Website Audit & Redesign -->
+    <div class="service-card-full reveal">
+      <div class="service-card-icon">📊</div>
+      <h3>Website Audit &amp; Redesign</h3>
+      <p>Is your existing website slow, outdated, or failing to convert visitors into leads? We provide comprehensive website audits that identify exactly what's holding your site back — speed issues, missing schema, poor mobile experience, weak CTAs, and more. After the audit, we present a detailed improvement roadmap. If you decide to proceed with a redesign, we rebuild your site from scratch using our premium design system, delivering a faster, more beautiful, and higher-converting website.</p>
+      <ul class="service-feature-list">
+        <li>Complete technical SEO &amp; performance audit</li>
+        <li>Mobile experience &amp; Core Web Vitals analysis</li>
+        <li>Conversion rate optimization recommendations</li>
+        <li>Full redesign with premium design system</li>
+      </ul>
+      <div class="service-card-actions">
+        <a href="contact.html" class="sca-primary">Get Free Audit</a>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20need%20a%20website%20audit!" target="_blank" class="sca-secondary">WhatsApp Us</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SEO PILLAR LINKS SECTION -->
+<section style="background: var(--bg2);">
+  <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+    <div class="section-tag" style="justify-content: center;">Local SEO Pages</div>
+    <h2 class="section-title">Explore Our <span>Specializations</span></h2>
+    <p class="section-sub" style="margin: 0 auto;">We've built dedicated service pages for each niche we serve in Kota. Explore our specialized expertise below.</p>
+  </div>
+
+  <div class="seo-pillars-grid">
+    <a href="local-seo/website-development-kota.html" class="seo-pillar-link reveal">
+      <span>💻</span> Website Development Kota
+    </a>
+    <a href="local-seo/web-designer-kota.html" class="seo-pillar-link reveal">
+      <span>🎨</span> Web Designer in Kota
+    </a>
+    <a href="local-seo/seo-services-kota.html" class="seo-pillar-link reveal">
+      <span>🔍</span> SEO Services Kota
+    </a>
+    <a href="local-seo/doctor-website-kota.html" class="seo-pillar-link reveal">
+      <span>🏥</span> Doctor Website Kota
+    </a>
+    <a href="local-seo/gym-website-kota.html" class="seo-pillar-link reveal">
+      <span>💪</span> Gym Website Kota
+    </a>
+    <a href="local-seo/real-estate-website-kota.html" class="seo-pillar-link reveal">
+      <span>🏠</span> Real Estate Website Kota
+    </a>
+  </div>
+</section>
+
+<!-- CASE STUDIES LINK -->
+<section style="background: var(--bg); padding: 80px 6%;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1100px; margin: 0 auto;">
+
+    <div class="cs-promo reveal">
+      <div class="section-tag" style="justify-content: center;">Real Results</div>
+      <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Read Our <span>Case Studies</span></h2>
+      <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin: 16px 0 28px; max-width: 440px; margin-left: auto; margin-right: auto;">
+        See exactly how we've helped local businesses in Kota grow their online presence, rank on Google, and generate consistent leads through our web design and SEO work.
+      </p>
+      <a href="case-studies/index.html" class="btn-primary">Read Case Studies →</a>
+    </div>
+
+    <!-- Portfolio Promo -->
+    <div class="portfolio-promo reveal">
+      <div class="section-tag" style="justify-content: center;">Our Portfolio</div>
+      <h2 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">See Our <span>Work</span></h2>
+      <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin: 16px 0 28px; max-width: 440px; margin-left: auto; margin-right: auto;">
+        Browse our portfolio of live demo websites across multiple industries — doctors, gyms, contractors, PG owners, and more. Each demo is a real, functional example of what we can build for you.
+      </p>
+      <a href="portfolio.html" class="btn-secondary">View Portfolio →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="trust-banner" style="background: var(--bg2);">
+  <div class="trust-item">
+    <span class="trust-icon">🏆</span>
+    <div class="trust-text">
+      <h4>5+ Live Demos</h4>
+      <p>Across multiple niches</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">⭐</span>
+    <div class="trust-text">
+      <h4>100% Client Satisfaction</h4>
+      <p>Pay only after approval</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">📱</span>
+    <div class="trust-text">
+      <h4>Mobile-First Design</h4>
+      <p>Every site loads in &lt;2s</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">🎯</span>
+    <div class="trust-text">
+      <h4>Kota-Specialized</h4>
+      <p>Local market expertise</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section style="background: var(--bg); padding: 100px 6%;">
+  <div class="bottom-cta-section reveal">
+    <div class="section-tag" style="justify-content: center;">Start Today</div>
+    <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 3.5rem);">Ready to Grow Your <span>Business Online?</span></h2>
+    <p style="color: var(--muted); font-size: 1rem; line-height: 1.75; max-width: 560px; margin: 20px auto 36px;">
+      Get a free website audit and a personalized digital roadmap for your business. No commitment, no upfront payment — just honest, expert advice from Kapil Ahir.
+    </p>
+    <div class="btn-group" style="justify-content: center;">
+      <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit%20for%20my%20business!" target="_blank" class="btn-primary">💬 Get Free Audit on WhatsApp</a>
+      <a href="pricing.html" class="btn-secondary">View Pricing →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta-bar">
+  <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+  <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+  <a href="contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+  <a href="contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">Site<span>Lab</span> India</a>
+      <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+      </div>
+      <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="case-studies/index.html">Case Studies</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="products/lifeos.html">LifeOS Product</a></li>
+        <li><a href="demos/index.html">Live Demos</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Local SEO</h4>
+      <ul class="footer-links">
+        <li><a href="local-seo/website-development-kota.html">Website Dev Kota</a></li>
+        <li><a href="local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+        <li><a href="local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+        <li><a href="local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+        <li><a href="local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+        <li><a href="local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+    <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

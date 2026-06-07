@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Neuro Demo — Next.js Neurology Clinic Website | SiteLab India</title>
+  <meta name="description" content="Doctor Neuro — a full-stack Next.js neurology clinic website with appointment booking, admin panel, patient management, and AI slot management. Built by SiteLab India, Kota.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sitelabindia.in/demos/doctor-neuro-demo.html">
+  <meta property="og:title" content="Doctor Neuro Demo — Next.js Neurology Clinic Website | SiteLab India">
+  <meta property="og:description" content="Full-stack Next.js neurology clinic with appointment booking, admin dashboard, patient records, and AI slot management. By SiteLab India, Kota.">
+  <meta property="og:url" content="https://sitelabindia.in/demos/doctor-neuro-demo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sitelabindia.in/assets/images/sitelab-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Doctor Neuro Demo — Next.js Neurology Clinic Website | SiteLab India">
+  <meta name="twitter:image" content="https://sitelabindia.in/assets/images/sitelab-og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Doctor Neuro — Advanced Neurology Clinic Website",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Full-stack Next.js neurology clinic website with real-time appointment booking, admin dashboard, patient record management, and AI-powered slot management. Built by SiteLab India.",
+    "author": {
+      "@type": "Person",
+      "name": "Kapil Ahir",
+      "url": "https://sitelabindia.in"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "SiteLab India",
+      "url": "https://sitelabindia.in",
+      "telephone": "+917878574692",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kota",
+        "addressRegion": "Rajasthan",
+        "postalCode": "324005",
+        "addressCountry": "IN"
+      }
+    },
+    "featureList": [
+      "Online Appointment Booking",
+      "Admin Dashboard",
+      "Patient Records Management",
+      "AI Slot Management",
+      "Doctor Profile",
+      "Services Section",
+      "FAQ",
+      "Reviews",
+      "Emergency Contact",
+      "WhatsApp Integration",
+      "Google Maps",
+      "Mobile Responsive"
+    ],
+    "url": "https://sitelabindia.in/demos/doctor-neuro-demo.html",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://sitelabindia.in/portfolio.html" },
+        { "@type": "ListItem", "position": 3, "name": "Doctor Neuro Demo", "item": "https://sitelabindia.in/demos/doctor-neuro-demo.html" }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    .feature-grid-12 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .feature-item {
+      background: var(--bg3);
+      border: 1px solid rgba(255,184,0,0.1);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-item:hover { border-color: rgba(255,184,0,0.3); transform: translateY(-2px); }
+    .feature-item-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .feature-item-text h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .feature-item-text p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .tech-stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+    .tech-item {
+      background: rgba(139,92,246,0.07);
+      border: 1px solid rgba(139,92,246,0.18);
+      border-radius: 12px; padding: 18px;
+      text-align: center; transition: all 0.2s;
+    }
+    .tech-item:hover { background: rgba(139,92,246,0.14); transform: translateY(-2px); }
+    .tech-item-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .tech-item-name { font-size: 0.9rem; font-weight: 700; color: var(--violet); }
+    .tech-item-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+    .demo-live-preview {
+      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+      border: 2px solid rgba(255,184,0,0.2);
+      border-radius: 20px; overflow: hidden;
+      position: relative; height: 420px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .demo-live-preview-inner { text-align: center; z-index: 1; position: relative; }
+    .mobile-preview-box {
+      background: var(--bg3); border: 2px solid rgba(255,184,0,0.2);
+      border-radius: 28px; padding: 12px; width: 240px; margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .mobile-preview-screen {
+      background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(255,184,0,0.05));
+      border-radius: 18px; height: 380px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .sidebar-info-card {
+      background: var(--bg2); border: 1px solid rgba(255,184,0,0.12);
+      border-radius: 16px; padding: 24px; position: sticky; top: 90px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li class="nav-dropdown">
+      <a href="../portfolio.html" class="active">Portfolio ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+        <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+        <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+        <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+        <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="../products/lifeos.html">Products ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="../products/lifeos.html">🧬 LifeOS</a>
+      </div>
+    </li>
+    <li><a href="../case-studies/index.html">Case Studies</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../pricing.html">Pricing</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="../services.html" onclick="toggleMenu()">Services</a>
+  <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+  <a href="../products/lifeos.html" onclick="toggleMenu()">Products</a>
+  <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+  <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+  <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+  <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../portfolio.html">Portfolio</a>
+  <span class="sep">›</span>
+  <span class="current">Doctor Neuro Demo</span>
+</nav>
+
+<!-- HERO -->
+<section style="padding-top: 30px; padding-bottom: 60px; background: linear-gradient(135deg, rgba(8,8,17,1) 0%, rgba(14,15,32,1) 100%); position: relative; overflow: hidden;">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-1"></div>
+  <div style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center;">
+    <div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+        <span class="cs-tag cs-tag-gold">🧠 Neurology</span>
+        <span class="cs-tag cs-tag-violet">Next.js 14</span>
+        <span class="cs-tag" style="background:rgba(37,211,102,0.1);color:var(--green);border:1px solid rgba(37,211,102,0.25);">Full-Stack</span>
+      </div>
+      <h1 class="section-title" style="font-size: clamp(2rem, 5vw, 3.4rem);">Doctor Neuro —<br><span style="color:var(--gold);">Advanced Neurology</span><br>Clinic Website</h1>
+      <p style="color: var(--muted); font-size: 1rem; line-height: 1.8; margin: 20px 0 32px; max-width: 540px;">A premium full-stack neurology clinic platform built with Next.js 14. Features real-time appointment booking, a comprehensive admin dashboard, patient record management, and AI-powered scheduling — setting the gold standard for medical websites in Kota, Rajasthan.</p>
+      <div class="btn-group">
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary">🚀 View Live Demo →</a>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20similar%20neurology%20clinic%20website!" target="_blank" class="btn-whatsapp">💬 Get Similar Website</a>
+        <a href="../case-studies/doctor-neuro-demo.html" class="btn-secondary">📊 View Case Study</a>
+      </div>
+    </div>
+    <div>
+      <div class="mobile-preview-box">
+        <div class="mobile-preview-screen">
+          <div style="font-size: 2.5rem;">🧠</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1px;color:var(--gold);">DOCTOR NEURO</div>
+          <div style="font-size:0.72rem;color:var(--muted);text-align:center;padding:0 16px;">Advanced Neurology Clinic · Kota</div>
+          <div style="background:rgba(255,184,0,0.12);border:1px solid rgba(255,184,0,0.2);border-radius:8px;padding:8px 16px;font-size:0.72rem;color:var(--gold);">📅 Book Appointment</div>
+          <div style="font-size:0.65rem;color:var(--muted);margin-top:6px;">Live on Vercel →</div>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:10px;">
+          <div style="width:50px;height:4px;background:var(--bg);border-radius:2px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section style="background: var(--bg);">
+  <div style="display: grid; grid-template-columns: 1fr 300px; gap: 50px; align-items: flex-start;">
+
+    <!-- LEFT: PROJECT DETAILS -->
+    <div>
+
+      <!-- PROJECT OVERVIEW -->
+      <div style="margin-bottom: 60px;">
+        <div class="section-tag">Project Overview</div>
+        <h2 class="section-title" style="font-size: 2rem;">About This <span style="color:var(--gold);">Project</span></h2>
+        <p style="color:var(--muted);font-size:0.96rem;line-height:1.85;margin-bottom:16px;">Doctor Neuro is a flagship demonstration of what SiteLab India can build for the healthcare sector. Unlike simple static clinic websites, this is a true full-stack application — a complete digital ecosystem for a modern neurology practice.</p>
+        <p style="color:var(--muted);font-size:0.96rem;line-height:1.85;margin-bottom:16px;">The platform enables patients to book appointments in real-time, the clinic admin to manage their calendar, access patient records, configure services, and view analytics — all from a secure, password-protected admin panel.</p>
+        <p style="color:var(--muted);font-size:0.96rem;line-height:1.85;">Built with Next.js 14 App Router, TypeScript for type safety, Supabase for real-time database and authentication, and deployed on Vercel for zero-downtime global CDN delivery.</p>
+      </div>
+
+      <!-- FEATURES: 12 -->
+      <div style="margin-bottom: 60px;">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title" style="font-size: 2rem;">12 <span style="color:var(--gold);">Powerful Features</span></h2>
+        <div class="feature-grid-12">
+          <div class="feature-item">
+            <span class="feature-item-icon">📅</span>
+            <div class="feature-item-text"><h4>Online Appointment Booking</h4><p>Real-time calendar with available slots and confirmation system</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">🖥️</span>
+            <div class="feature-item-text"><h4>Admin Dashboard</h4><p>Secure panel to manage appointments, patients, and clinic settings</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">📋</span>
+            <div class="feature-item-text"><h4>Patient Records</h4><p>Digital patient history, visit logs, and record management</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">🤖</span>
+            <div class="feature-item-text"><h4>AI Slot Management</h4><p>Smart scheduling that auto-fills and optimises doctor's calendar</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">👨‍⚕️</span>
+            <div class="feature-item-text"><h4>Doctor Profile</h4><p>Credentials, qualifications, specializations, and achievements</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">🏥</span>
+            <div class="feature-item-text"><h4>Services Section</h4><p>Detailed neurological services with descriptions and pricing</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">❓</span>
+            <div class="feature-item-text"><h4>FAQ Section</h4><p>Accordion FAQ answering common patient questions</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">⭐</span>
+            <div class="feature-item-text"><h4>Patient Reviews</h4><p>Verified patient testimonials with star ratings display</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">🚨</span>
+            <div class="feature-item-text"><h4>Emergency Contact</h4><p>Prominent emergency CTA bar with direct dial functionality</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">💬</span>
+            <div class="feature-item-text"><h4>WhatsApp Integration</h4><p>Pre-filled WhatsApp booking with clinic context</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">📍</span>
+            <div class="feature-item-text"><h4>Google Maps Embed</h4><p>Interactive map with directions and clinic location</p></div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-item-icon">📱</span>
+            <div class="feature-item-text"><h4>Mobile Responsive</h4><p>Pixel-perfect on all devices from mobile to 4K monitors</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECH STACK -->
+      <div style="margin-bottom: 60px;">
+        <div class="section-tag">Technology Stack</div>
+        <h2 class="section-title" style="font-size: 2rem;">Built With <span style="color:var(--gold);">Modern Tech</span></h2>
+        <div class="tech-stack-grid">
+          <div class="tech-item">
+            <div class="tech-item-icon">⚛️</div>
+            <div class="tech-item-name">Next.js 14</div>
+            <div class="tech-item-sub">App Router + RSC</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon">🔷</div>
+            <div class="tech-item-name">TypeScript</div>
+            <div class="tech-item-sub">Type-safe codebase</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon">💨</div>
+            <div class="tech-item-name">Tailwind CSS</div>
+            <div class="tech-item-sub">Utility-first styling</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon">🗄️</div>
+            <div class="tech-item-name">Supabase</div>
+            <div class="tech-item-sub">Realtime DB + Auth</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon">▲</div>
+            <div class="tech-item-name">Vercel</div>
+            <div class="tech-item-sub">Global CDN deploy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE PREVIEW AREA -->
+      <div style="margin-bottom: 60px;">
+        <div class="section-tag">Live Preview</div>
+        <h2 class="section-title" style="font-size: 2rem;">See It <span style="color:var(--gold);">In Action</span></h2>
+        <p style="color:var(--muted);font-size:0.92rem;margin-bottom:24px;">This is a full Next.js application deployed on Vercel. Click the button below to open the live demo in a new tab and experience the full booking flow.</p>
+        <div class="demo-live-preview">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(255,184,0,0.04));"></div>
+          <div class="demo-live-preview-inner">
+            <div style="font-size:3rem;margin-bottom:16px;">🧠</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">DOCTOR NEURO</div>
+            <p style="color:var(--muted);font-size:0.88rem;margin-bottom:24px;">Advanced Neurology Clinic Website · Next.js 14</p>
+            <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary">🚀 Open Live Demo →</a>
+            <p style="color:var(--muted);font-size:0.72rem;margin-top:16px;">Hosted on Vercel · Opens in new tab</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: SIDEBAR -->
+    <div>
+      <div class="sidebar-info-card">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:18px;color:var(--gold);">📋 Project Details</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px;">
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Industry</div>
+            <div style="font-size:0.9rem;font-weight:600;">Healthcare / Neurology</div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px;">
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Tech Type</div>
+            <div style="font-size:0.9rem;font-weight:600;">Full-Stack Application</div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px;">
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Deployment</div>
+            <div style="font-size:0.9rem;font-weight:600;">Vercel (Global CDN)</div>
+          </div>
+          <div style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px;">
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Features</div>
+            <div style="font-size:0.9rem;font-weight:600;">12 Core Features</div>
+          </div>
+          <div>
+            <div style="font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Category</div>
+            <div style="font-size:0.9rem;font-weight:600;">Premium / Enterprise</div>
+          </div>
+        </div>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+          <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary" style="justify-content:center;">🚀 View Live Demo</a>
+          <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20similar%20neurology%20website!" target="_blank" class="btn-whatsapp" style="justify-content:center;">💬 Get Similar</a>
+          <a href="../case-studies/doctor-neuro-demo.html" class="btn-secondary" style="justify-content:center;">📊 Case Study</a>
+        </div>
+      </div>
+
+      <!-- INTERNAL LINKS -->
+      <div style="background:var(--bg2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:24px;margin-top:20px;">
+        <h4 style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:14px;">Related Pages</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="../portfolio.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">← All Portfolio</a>
+          <a href="../services.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🛠️ Our Services</a>
+          <a href="../local-seo/doctor-website-kota.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🩺 Doctor Website Kota</a>
+          <a href="sharma-care-clinic.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏥 Sharma Care Clinic Demo</a>
+          <a href="../pricing.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">💰 Pricing Plans</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(135deg,rgba(255,184,0,0.06),rgba(139,92,246,0.04)); border-top: 1px solid rgba(255,184,0,0.1); text-align: center;">
+  <div class="section-tag" style="justify-content: center;">Get This For Your Clinic</div>
+  <h2 class="section-title">Want a Similar <span style="color:var(--gold);">Clinic Website?</span></h2>
+  <p class="section-sub" style="margin: 0 auto 36px;">We build premium medical websites for doctors, clinics, and hospitals across Kota and Rajasthan. Custom design, SEO setup, and 72-hour delivery.</p>
+  <div class="btn-group" style="justify-content: center;">
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20clinic%20website%20like%20Doctor%20Neuro!" target="_blank" class="btn-primary">💬 WhatsApp Kapil Now</a>
+    <a href="../contact.html" class="btn-secondary">📋 Get Free Quote</a>
+    <a href="tel:+917878574692" class="btn-violet">📞 Call Now</a>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta-bar">
+  <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+  <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+  <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+  <a href="../contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+</div>
+
+<a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+      <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+      </div>
+      <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="../case-studies/index.html">Case Studies</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+        <li><a href="../demos/index.html">Live Demos</a></li>
+        <li><a href="../sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Local SEO</h4>
+      <ul class="footer-links">
+        <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+        <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+        <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+        <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+        <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+        <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../sitemap.xml">Sitemap</a>
+    </div>
+    <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

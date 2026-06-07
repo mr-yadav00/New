@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekhraj Contractor Case Study — Industrial Website Kota | SiteLab India</title>
+  <meta name="description" content="How SiteLab India built an industrial digital presence for Lekhraj Contractor — precast boundary wall business in Kota — with a gold-theme website, local SEO, and online lead generation.">
+  <link rel="canonical" href="https://sitelabindia.in/case-studies/lekhraj-contractor.html">
+  <meta property="og:title" content="Lekhraj Contractor Case Study — Industrial Website Kota | SiteLab India">
+  <meta property="og:description" content="How we built a credibility-first industrial website for Lekhraj Contractor in Kota with precast boundary wall SEO and lead generation.">
+  <meta property="og:url" content="https://sitelabindia.in/case-studies/lekhraj-contractor.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .cs-hero-detail {
+      padding: 130px 6% 60px;
+      background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cs-hero-detail::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,184,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,184,0,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 85% 85% at center, black 30%, transparent 80%);
+    }
+    .cs-hero-detail > * { position: relative; z-index: 1; }
+    .cs-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 6%;
+    }
+    .cs-sidebar { position: sticky; top: 90px; align-self: start; }
+    .cs-sidebar-card {
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 28px; margin-bottom: 20px;
+    }
+    .cs-sidebar-card h4 {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .cs-sidebar-stat {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+    .cs-sidebar-stat:last-child { border-bottom: none; }
+    .cs-sidebar-stat span:first-child { color: var(--muted); }
+    .cs-sidebar-stat span:last-child { color: var(--white); font-weight: 600; }
+    .cs-result-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 20px;
+    }
+    .cs-result-card {
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: var(--radius); padding: 24px; text-align: center;
+    }
+    .cs-result-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: var(--gold); line-height: 1; margin-bottom: 6px;
+    }
+    .cs-result-label { font-size: 0.78rem; color: var(--muted); }
+    .cs-feature-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;
+    }
+    .cs-feature-item {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px; padding: 14px 16px;
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .cs-feature-item::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .cs-seo-keyword {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,184,0,0.07); border: 1px solid rgba(255,184,0,0.18);
+      color: var(--gold); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-tech-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25);
+      color: var(--violet); padding: 5px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 600; margin: 4px 4px 4px 0;
+    }
+    .cs-cta-section {
+      background: linear-gradient(135deg, rgba(255,184,0,0.07) 0%, rgba(139,92,246,0.05) 100%);
+      border: 1px solid rgba(255,184,0,0.18);
+      border-radius: 20px; padding: 48px; text-align: center; margin: 60px 0;
+    }
+    @media (max-width: 900px) {
+      .cs-layout { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; }
+      .cs-feature-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) { .cs-result-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Lekhraj Contractor — How We Built an Industrial Digital Presence",
+    "description": "Case study: SiteLab India built an industrial gold-theme website for Lekhraj Contractor, a precast boundary wall business in Kota, with local SEO and online lead generation.",
+    "author": { "@type": "Person", "name": "Kapil Ahir" },
+    "publisher": { "@type": "Organization", "name": "SiteLab India", "url": "https://sitelabindia.in" },
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-06-03",
+    "url": "https://sitelabindia.in/case-studies/lekhraj-contractor.html",
+    "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://sitelabindia.in/case-studies/" },
+        { "@type": "ListItem", "position": 3, "name": "Lekhraj Contractor", "item": "https://sitelabindia.in/case-studies/lekhraj-contractor.html" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="../portfolio.html">Portfolio ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+          <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+          <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+          <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+          <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="../products/lifeos.html">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/lifeos.html">🧬 LifeOS</a>
+        </div>
+      </li>
+      <li><a href="../case-studies/index.html" class="active">Case Studies</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">✕</button>
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="../services.html" onclick="toggleMenu()">Services</a>
+    <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="../products/lifeos.html" onclick="toggleMenu()">Products</a>
+    <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+    <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+    <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+    <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+    <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../case-studies/index.html">Case Studies</a>
+    <span class="sep">›</span>
+    <span class="current">Lekhraj Contractor</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="cs-hero-detail">
+    <div class="cs-meta">
+      <span class="cs-tag cs-tag-gold">🏗️ Construction</span>
+      <span class="cs-tag cs-tag-violet">📍 Kota, Rajasthan</span>
+      <span class="cs-tag" style="background:rgba(37,211,102,0.1);color:var(--green);border:1px solid rgba(37,211,102,0.25);">✅ Completed</span>
+    </div>
+    <h1 class="section-title" style="max-width:800px;">Lekhraj Contractor —<br><span>How We Built an Industrial Digital Presence</span></h1>
+    <p class="section-sub" style="max-width:600px;margin-top:18px;">A bold, gold-accented industrial website for Kota's premier precast boundary wall contractor — built to establish credibility, dominate local search, and generate quality project leads online.</p>
+    <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
+      <a href="../demos/lekhraj-contractor.html" target="_blank" class="btn-primary">View Live Demo ↗</a>
+      <a href="../contact.html" class="btn-secondary">Get a Similar Website</a>
+    </div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="cs-layout">
+    <main>
+
+      <!-- THE PROBLEM -->
+      <div class="cs-section reveal">
+        <h2>🔴 The Problem</h2>
+        <p>Lekhraj Contractor is one of Kota's most experienced precast boundary wall specialists — yet they were operating in complete digital darkness. Despite years of successful projects across Rajasthan, potential clients looking for contractors online had no way to discover them.</p>
+        <p>The business challenges were significant and directly impacting growth:</p>
+        <ul class="cs-list">
+          <li>No website — the business existed only through word-of-mouth and personal referrals, severely limiting scalability.</li>
+          <li>Industrial clients — including builders, developers, and real estate firms — expected to verify contractor credibility online before making contact. Without a website, the business appeared informal and unverified.</li>
+          <li>Competitors offering similar precast and boundary wall services in Kota had basic web presences, giving them an unfair first-mover advantage in search results.</li>
+          <li>No online lead generation system — all inquiries came through manual channels with no automated capture or tracking.</li>
+          <li>No showcase of past projects, process methodology, or service coverage area to build confidence with prospective clients.</li>
+          <li>Seasonal fluctuations in business couldn't be smoothed with any online marketing or presence.</li>
+        </ul>
+        <p>The core issue was clear: Lekhraj Contractor needed a digital presence that matched the scale and quality of their physical work — something that would communicate expertise, reliability, and professionalism to industrial clients before the first phone call.</p>
+      </div>
+
+      <!-- OUR SOLUTION -->
+      <div class="cs-section reveal">
+        <h2>✅ Our Solution</h2>
+        <p>SiteLab India designed a bold, industrial-grade website for Lekhraj Contractor that speaks the language of construction — strong, structured, and built to last. The design language uses a gold-on-dark color palette that communicates premium quality without losing the authoritative industrial feel that construction clients respond to.</p>
+        <p>The website was built around three strategic pillars:</p>
+        <ul class="cs-list">
+          <li><strong>Credibility:</strong> Showcasing completed projects, service strengths, and the contractor's operational scale — giving industrial clients the proof they need to make contact.</li>
+          <li><strong>Discoverability:</strong> Full local SEO optimization for precast boundary wall keywords in Kota and across Rajasthan — ensuring Google sends relevant traffic.</li>
+          <li><strong>Lead Generation:</strong> A prominently placed inquiry form, click-to-call buttons, and WhatsApp integration that make it effortless for potential clients to initiate contact.</li>
+        </ul>
+        <p>The website was completed and live within 72 hours of project briefing, giving the business immediate online presence ahead of the next construction season.</p>
+      </div>
+
+      <!-- FEATURES BUILT -->
+      <div class="cs-section reveal">
+        <h2>⚙️ Features Built</h2>
+        <p>The Lekhraj Contractor website was engineered for the industrial sector with features that establish credibility and drive inquiries:</p>
+        <div class="cs-feature-grid">
+          <div class="cs-feature-item">Auto-scrolling marquee showcasing key service offerings and project highlights</div>
+          <div class="cs-feature-item">4-step process methodology section explaining how projects are handled</div>
+          <div class="cs-feature-item">Strength &amp; capabilities list demonstrating operational scale and expertise</div>
+          <div class="cs-feature-item">Project segment cards for different types of boundary wall solutions</div>
+          <div class="cs-feature-item">Service coverage map visual showing operational areas across Rajasthan</div>
+          <div class="cs-feature-item">Multi-contact system with form, WhatsApp, and direct call options</div>
+          <div class="cs-feature-item">Industrial gold-accent design language with structured grid layout</div>
+          <div class="cs-feature-item">Floating WhatsApp button for immediate client contact</div>
+          <div class="cs-feature-item">LocalBusiness schema markup for Google search integration</div>
+          <div class="cs-feature-item">Mobile-responsive design optimized for on-site contractor access</div>
+        </div>
+      </div>
+
+      <!-- SEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🔍 SEO Strategy</h2>
+        <p>The SEO strategy for Lekhraj Contractor focused on capturing commercial-intent searches from builders, developers, and property owners looking for precast and boundary wall solutions in Kota and surrounding regions of Rajasthan.</p>
+        <p><strong>Primary Keywords Targeted:</strong></p>
+        <div style="margin-bottom:18px;">
+          <span class="cs-seo-keyword">Precast Boundary Wall Kota</span>
+          <span class="cs-seo-keyword">Contractor Kota Rajasthan</span>
+          <span class="cs-seo-keyword">Industrial Contractor Rajasthan</span>
+          <span class="cs-seo-keyword">Boundary Wall Construction Kota</span>
+          <span class="cs-seo-keyword">Precast Wall Company Kota</span>
+          <span class="cs-seo-keyword">Construction Services Kota</span>
+        </div>
+        <ul class="cs-list">
+          <li><strong>Title Tag Optimization:</strong> Pages titled with the primary service keyword + location formula for maximum local SERP visibility.</li>
+          <li><strong>On-Page Content:</strong> Service descriptions written to naturally incorporate target keywords while providing genuine value to prospective industrial clients.</li>
+          <li><strong>LocalBusiness Schema:</strong> JSON-LD schema implemented with contractor details, service area, and contact information to power rich results.</li>
+          <li><strong>GMB Setup Guidance:</strong> Google My Business profile optimization instructions provided to complement the website's local SEO signals.</li>
+          <li><strong>NAP Consistency:</strong> Name, address, and phone number formatted identically across all pages and schema data for local citation consistency.</li>
+        </ul>
+      </div>
+
+      <!-- GEO STRATEGY -->
+      <div class="cs-section reveal">
+        <h2>🤖 GEO Strategy (AI Search Optimization)</h2>
+        <p>As AI-powered search engines become primary discovery tools for industrial clients researching contractors, GEO optimization ensures Lekhraj Contractor is surfaced accurately in AI-generated answers and summaries.</p>
+        <ul class="cs-list">
+          <li><strong>Entity Optimization:</strong> "Lekhraj Contractor" established as a named business entity with consistent structured data signals across all pages and schema markup.</li>
+          <li><strong>FAQ Schema:</strong> Common contractor inquiries — pricing structures, project timelines, coverage areas, material quality — answered in FAQ format with schema markup for AI consumption.</li>
+          <li><strong>LocalBusiness Schema:</strong> Complete LocalBusiness JSON-LD with geo-coordinates, service area specification, and contact details — enabling AI models to accurately describe the business.</li>
+          <li><strong>Conversational Content:</strong> Service descriptions written in natural language answering the kinds of questions an industrial client would ask when researching contractors on AI platforms.</li>
+          <li><strong>Authority Signals:</strong> Content emphasizing years of experience, project count, and geographic coverage — signals AI models prioritize when generating trustworthy business recommendations.</li>
+        </ul>
+      </div>
+
+      <!-- MOBILE OPTIMIZATION -->
+      <div class="cs-section reveal">
+        <h2>📱 Mobile Optimization</h2>
+        <p>Contractors and construction industry professionals frequently access websites on mobile devices at project sites. The Lekhraj Contractor website was designed to work flawlessly in these real-world conditions:</p>
+        <ul class="cs-list">
+          <li>Fully responsive grid layout that adapts cleanly from mobile (320px) to large desktop (1440px) screens.</li>
+          <li>Sticky floating WhatsApp button — always visible, immediately tappable for quick project inquiries from anywhere.</li>
+          <li>Click-to-call phone button in the hero section for instant contact without navigating the page.</li>
+          <li>Large touch targets on all buttons and interactive elements for easy operation with work gloves on.</li>
+          <li>Performance-optimized images and CSS for fast loading on mobile data connections at construction sites.</li>
+          <li>Simple, clear navigation structure that works intuitively even on first visit from a mobile referral link.</li>
+        </ul>
+      </div>
+
+      <!-- TECHNOLOGY -->
+      <div class="cs-section reveal">
+        <h2>🛠️ Technology Stack</h2>
+        <p>Built with a battle-tested, lightweight stack that delivers maximum performance with zero maintenance overhead:</p>
+        <div style="margin-bottom:18px;">
+          <span class="cs-tech-badge">HTML5 Semantic Markup</span>
+          <span class="cs-tech-badge">CSS3 Grid &amp; Flexbox</span>
+          <span class="cs-tech-badge">Barlow Font (Industrial)</span>
+          <span class="cs-tech-badge">Bebas Neue (Headings)</span>
+          <span class="cs-tech-badge">Vanilla JavaScript</span>
+          <span class="cs-tech-badge">JSON-LD Schema</span>
+          <span class="cs-tech-badge">WhatsApp API</span>
+          <span class="cs-tech-badge">GitHub Pages</span>
+        </div>
+        <p>The font pairing of Barlow (strong, utilitarian body text) with Bebas Neue (bold industrial headings) was specifically chosen to match the construction industry's visual language — communicating strength and reliability through typography alone. The gold-on-dark color palette was inspired by industrial safety markings, adding a layer of subconscious industry relevance to every page element.</p>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="cs-section reveal">
+        <h2>📈 Results Achieved</h2>
+        <p>Lekhraj Contractor's digital transformation delivered immediate and lasting business impact across several measurable dimensions:</p>
+        <div class="cs-result-grid">
+          <div class="cs-result-card">
+            <div class="cs-result-val">24/7</div>
+            <div class="cs-result-label">Lead Generation — Always Active</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">72hrs</div>
+            <div class="cs-result-label">From Zero to Live Website</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">100%</div>
+            <div class="cs-result-label">Mobile Responsive</div>
+          </div>
+          <div class="cs-result-card">
+            <div class="cs-result-val">6+</div>
+            <div class="cs-result-label">Keywords Targeted</div>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <ul class="cs-list">
+            <li><strong>Professional Credibility Established:</strong> The website immediately communicates the scale and professionalism of the operation — no more potential clients walking away due to lack of web presence.</li>
+            <li><strong>Lead Generation Form Active:</strong> The contact form captures project inquiries 24/7, even outside business hours — meaning no missed opportunities during peak construction season.</li>
+            <li><strong>Direct WhatsApp Integration:</strong> Industrial clients can initiate project discussions instantly via WhatsApp, reducing the friction barrier to first contact significantly.</li>
+            <li><strong>Local Search Visibility:</strong> The website now creates a foundation for Google to index and rank Lekhraj Contractor for target keywords across Kota and Rajasthan.</li>
+            <li><strong>Competitive Positioning:</strong> The website's premium design immediately differentiates Lekhraj Contractor from competitors with basic or outdated web presences in the region.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cs-cta-section reveal">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🏗️</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;margin-bottom:14px;">Build Your Industrial<br><span style="color:var(--gold);">Digital Presence</span></h2>
+        <p style="color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:500px;margin:0 auto 28px;">Contractors, builders, and industrial businesses in Kota trust SiteLab India to create websites that generate real project leads — not just look good.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20an%20industrial%20website%20for%20my%20contracting%20business!" target="_blank" class="btn-whatsapp">💬 WhatsApp Kapil</a>
+          <a href="../contact.html" class="btn-primary">Get a Free Quote →</a>
+        </div>
+        <p style="color:var(--muted);font-size:0.8rem;margin-top:18px;">Also see: <a href="../services.html" style="color:var(--gold);">Our Services</a> · <a href="../portfolio.html" style="color:var(--gold);">Live Demos</a> · <a href="../case-studies/index.html" style="color:var(--gold);">More Case Studies</a></p>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="cs-sidebar">
+      <div class="cs-sidebar-card">
+        <h4>Project Details</h4>
+        <div class="cs-sidebar-stat"><span>Client</span><span>Lekhraj Contractor</span></div>
+        <div class="cs-sidebar-stat"><span>Industry</span><span>Construction</span></div>
+        <div class="cs-sidebar-stat"><span>Location</span><span>Kota, Rajasthan</span></div>
+        <div class="cs-sidebar-stat"><span>Delivery</span><span>72 Hours</span></div>
+        <div class="cs-sidebar-stat"><span>Type</span><span>Static HTML Website</span></div>
+        <div class="cs-sidebar-stat"><span>Design</span><span>Industrial Gold Theme</span></div>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Tech Stack</h4>
+        <div class="cs-sidebar-stat"><span>Frontend</span><span>HTML5 / CSS3</span></div>
+        <div class="cs-sidebar-stat"><span>Fonts</span><span>Barlow + Bebas Neue</span></div>
+        <div class="cs-sidebar-stat"><span>Interactivity</span><span>Vanilla JS</span></div>
+        <div class="cs-sidebar-stat"><span>Schema</span><span>JSON-LD LocalBusiness</span></div>
+        <div class="cs-sidebar-stat"><span>Hosting</span><span>GitHub Pages</span></div>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Quick Actions</h4>
+        <a href="../demos/lekhraj-contractor.html" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;">View Live Demo ↗</a>
+        <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20contractor%20website!" target="_blank" class="btn-whatsapp" style="width:100%;justify-content:center;margin-bottom:10px;">💬 WhatsApp Now</a>
+        <a href="../case-studies/index.html" class="btn-secondary" style="width:100%;justify-content:center;">← All Case Studies</a>
+      </div>
+
+      <div class="cs-sidebar-card">
+        <h4>Related Projects</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="sharma-care-clinic.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏥 Sharma Care Clinic →</a>
+          <a href="yadav-fitness-club.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">💪 Yadav Fitness Club →</a>
+          <a href="radha-raman-residency.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🏠 Radha Raman Residency →</a>
+          <a href="doctor-neuro-demo.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">🧠 Doctor Neuro Demo →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta-bar">
+    <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+    <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+    <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+    <a href="../contact.html#book" class="sticky-cta-btn book"><span class="cta-icon">📅</span>Book</a>
+  </div>
+
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+        <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+        </div>
+        <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="../case-studies/index.html">Case Studies</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+          <li><a href="../demos/index.html">Live Demos</a></li>
+          <li><a href="../sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Local SEO</h4>
+        <ul class="footer-links">
+          <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+          <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+          <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+          <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+          <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+          <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../sitemap.xml">Sitemap</a>
+      </div>
+      <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+</body>
+</html>

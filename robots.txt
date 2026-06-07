@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /demos/doctor-neuro-demo/.next/
+Disallow: /demos/doctor-neuro-demo/node_modules/
+
+Sitemap: https://sitelabindia.in/sitemap.xml

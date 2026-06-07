@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeOS — Personal Productivity OS by SiteLab India</title>
+<meta name="description" content="LifeOS is SiteLab India's flagship productivity app. Manage goals, tasks, habits, and life systems in one elegant interface. Try free at life-os-seven-sooty.vercel.app">
+<link rel="canonical" href="https://sitelabindia.in/products/lifeos.html">
+<meta property="og:title" content="LifeOS — Personal Productivity OS by SiteLab India">
+<meta property="og:description" content="LifeOS is SiteLab India's flagship productivity app. Manage goals, tasks, habits, and life systems in one elegant interface. Try free.">
+<meta property="og:image" content="https://sitelabindia.in/assets/images/lifeos-hero.png">
+<meta property="og:url" content="https://sitelabindia.in/products/lifeos.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SiteLab India">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LifeOS — Personal Productivity OS by SiteLab India">
+<meta name="twitter:description" content="LifeOS: manage goals, tasks, habits, and life systems in one elegant interface. Free web app by SiteLab India.">
+<meta name="twitter:image" content="https://sitelabindia.in/assets/images/lifeos-hero.png">
+<link rel="stylesheet" href="../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LifeOS",
+  "description": "LifeOS is a premium personal productivity platform designed to help you organize your life, track goals, build powerful habits, and measure real progress — all in one elegant web interface. Built by SiteLab India.",
+  "url": "https://life-os-seven-sooty.vercel.app/",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web Browser",
+  "softwareVersion": "1.0",
+  "author": {
+    "@type": "Person",
+    "name": "Kapil Ahir",
+    "url": "https://sitelabindia.in"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "SiteLab India",
+    "url": "https://sitelabindia.in",
+    "founder": { "@type": "Person", "name": "Kapil Ahir" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kota",
+      "addressRegion": "Rajasthan",
+      "postalCode": "324005",
+      "addressCountry": "IN"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock",
+    "description": "Free to use. Premium features coming Q3 2026."
+  },
+  "featureList": [
+    "Goal Tracking",
+    "Task Management",
+    "Habit Builder",
+    "AI Insights",
+    "Progress Analytics",
+    "Privacy First"
+  ],
+  "screenshot": "https://sitelabindia.in/assets/images/lifeos-hero.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sitelabindia.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://sitelabindia.in/products/" },
+    { "@type": "ListItem", "position": 3, "name": "LifeOS", "item": "https://sitelabindia.in/products/lifeos.html" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is LifeOS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LifeOS is a premium personal productivity operating system built by SiteLab India's founder Kapil Ahir. It helps you manage goals, tasks, habits, and track real life progress in one elegant web interface." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is LifeOS free to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, LifeOS is completely free to use. All core features including goal tracking, task management, and habit building are free. Premium features with advanced analytics and API integrations are coming Q3 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is LifeOS for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LifeOS is designed for students, working professionals, entrepreneurs, and anyone who wants to manage their life systematically. If you want to track goals, build habits, and see real progress, LifeOS is for you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe on LifeOS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. LifeOS is built with a privacy-first philosophy. Your personal data, goals, and habits stay on your account. We never sell or share your personal information with third parties." }
+    },
+    {
+      "@type": "Question",
+      "name": "What platforms does LifeOS support?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LifeOS is a web application that works in any modern browser on any device — desktop, tablet, or mobile (Android and iOS). No installation or app download required." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is LifeOS connected to SiteLab India?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LifeOS is SiteLab India's internal flagship product, built by founder Kapil Ahir. It demonstrates SiteLab India's capability to build not just marketing websites, but full-stack digital products with real functionality, databases, and user systems." }
+    }
+  ]
+}
+</script>
+
+<style>
+  /* LifeOS Hero */
+  .lifeos-hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 6% 80px;
+    position: relative; overflow: hidden;
+    background: var(--bg);
+  }
+  .lifeos-hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+    position: relative; z-index: 2; width: 100%;
+  }
+  .lifeos-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.35);
+    border-radius: 100px; padding: 7px 20px;
+    font-size: 0.8rem; font-weight: 700; color: var(--violet);
+    letter-spacing: 1px; margin-bottom: 22px;
+    animation: fadeUp 0.5s ease both;
+  }
+  .lifeos-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    line-height: 0.95; letter-spacing: 1px;
+    margin-bottom: 22px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .lifeos-hero h1 span { color: var(--violet); }
+  .lifeos-hero-sub {
+    color: var(--muted); font-size: 1.05rem; line-height: 1.8;
+    margin-bottom: 32px; max-width: 500px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-pills {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s 0.25s ease both;
+  }
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 0.78rem; font-weight: 600; color: var(--muted);
+  }
+  .hero-pill span { color: var(--violet); }
+  .lifeos-hero-img {
+    position: relative; z-index: 2;
+    animation: float 6s ease-in-out infinite;
+  }
+  .lifeos-hero-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(139,92,246,0.3);
+  }
+  .lifeos-hero-img-placeholder {
+    max-width: 500px;
+    background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(255,184,0,0.08) 100%);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(139,92,246,0.3);
+    animation: float 6s ease-in-out infinite;
+    padding: 60px 40px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 18px; text-align: center;
+  }
+  .lifeos-app-icon { font-size: 5rem; line-height: 1; }
+  .lifeos-app-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; letter-spacing: 2px; color: var(--violet);
+  }
+  .lifeos-app-sub { color: var(--muted); font-size: 0.85rem; font-family: 'Space Mono', monospace; }
+
+  /* Glow orbs */
+  .lifeos-glow-v { position: absolute; top: 15%; left: 55%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .lifeos-glow-g { position: absolute; bottom: 10%; left: 0%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,184,0,0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+
+  /* Feature grid */
+  .lifeos-feature-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .lifeos-feature-card {
+    background: var(--bg2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 32px 28px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .lifeos-feature-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--violet), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .lifeos-feature-card:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.25); box-shadow: 0 16px 40px rgba(139,92,246,0.12); }
+  .lifeos-feature-card:hover::before { opacity: 1; }
+  .lifeos-feature-icon { font-size: 2.2rem; margin-bottom: 16px; }
+  .lifeos-feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+  .lifeos-feature-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+  /* Benefit cards */
+  .benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .benefit-card {
+    background: var(--bg2); border-radius: 20px; padding: 44px 32px;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .benefit-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .benefit-card.clarity::before { background: linear-gradient(90deg, var(--gold), transparent); }
+  .benefit-card.consistency::before { background: linear-gradient(90deg, var(--violet), transparent); }
+  .benefit-card.growth::before { background: linear-gradient(90deg, #25D366, transparent); }
+  .benefit-card:hover { transform: translateY(-8px); border-color: rgba(139,92,246,0.2); }
+  .benefit-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; line-height: 1; margin-bottom: 10px; opacity: 0.12; }
+  .benefit-card.clarity .benefit-num { color: var(--gold); }
+  .benefit-card.consistency .benefit-num { color: var(--violet); }
+  .benefit-card.growth .benefit-num { color: #25D366; }
+  .benefit-icon { font-size: 2rem; margin-bottom: 12px; }
+  .benefit-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 12px; }
+  .benefit-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
+
+  /* Screenshots */
+  .screenshots-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .screenshot-card {
+    border-radius: 16px; overflow: hidden;
+    height: 280px; position: relative;
+    background: linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(255,184,0,0.06) 100%);
+    border: 1px solid rgba(139,92,246,0.18);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; cursor: pointer; text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .screenshot-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(139,92,246,0.22); }
+  .screenshot-icon { font-size: 2.8rem; }
+  .screenshot-label { color: var(--white); font-size: 0.9rem; font-weight: 700; }
+  .screenshot-sub { color: var(--muted); font-size: 0.75rem; font-family: 'Space Mono', monospace; }
+  .screenshot-open {
+    position: absolute; bottom: 16px; right: 16px;
+    background: var(--violet); color: #fff;
+    padding: 5px 14px; border-radius: 8px;
+    font-size: 0.72rem; font-weight: 700;
+    opacity: 0; transition: opacity 0.2s;
+    text-decoration: none;
+  }
+  .screenshot-card:hover .screenshot-open { opacity: 1; }
+
+  /* Pricing teaser */
+  .pricing-teaser {
+    text-align: center; padding: 80px 6%;
+    background: linear-gradient(135deg, rgba(139,92,246,0.06) 0%, rgba(255,184,0,0.04) 100%);
+    border-top: 1px solid rgba(139,92,246,0.12);
+    border-bottom: 1px solid rgba(139,92,246,0.12);
+  }
+  .pricing-teaser .price-free {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5.5rem; color: var(--violet); line-height: 1; margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .free-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25);
+    border-radius: 100px; padding: 6px 18px;
+    font-size: 0.78rem; font-weight: 700; color: #25D366;
+    letter-spacing: 1px; margin-bottom: 20px;
+  }
+  .coming-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.25);
+    border-radius: 100px; padding: 5px 16px;
+    font-size: 0.75rem; font-weight: 700; color: var(--violet);
+    letter-spacing: 1px; margin-top: 16px;
+  }
+
+  /* CTA strip */
+  .lifeos-cta-strip {
+    padding: 100px 6%;
+    background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(255,184,0,0.04) 100%);
+    border-top: 1px solid rgba(139,92,246,0.1);
+    text-align: center;
+  }
+  .lifeos-cta-strip h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem,5vw,3.8rem); margin-bottom: 16px; }
+  .lifeos-cta-strip h2 span { color: var(--violet); }
+  .lifeos-cta-strip p { color: var(--muted); font-size: 1.05rem; margin-bottom: 36px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .lifeos-hero-inner { grid-template-columns: 1fr; }
+    .benefit-grid { grid-template-columns: 1fr; }
+    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .screenshots-grid { grid-template-columns: 1fr; }
+    .screenshot-card { height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">Site<span>Lab</span> India</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li class="nav-dropdown">
+      <a href="../portfolio.html">Portfolio ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="../demos/doctor-neuro-demo.html">🧠 Doctor Neuro</a>
+        <a href="../demos/sharma-care-clinic.html">🏥 Sharma Care Clinic</a>
+        <a href="../demos/lekhraj-contractor.html">🏗️ Lekhraj Contractor</a>
+        <a href="../demos/yadav-fitness-club.html">💪 Yadav Fitness Club</a>
+        <a href="../demos/radha-raman-residency.html">🏠 Radha Raman Residency</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="../products/lifeos.html" class="active">Products ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="../products/lifeos.html">🧬 LifeOS</a>
+      </div>
+    </li>
+    <li><a href="../case-studies/index.html">Case Studies</a></li>
+    <li><a href="../blog/index.html">Blog</a></li>
+    <li><a href="../pricing.html">Pricing</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20want%20a%20free%20website%20audit!" target="_blank" class="nav-cta">Free Audit →</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="../services.html" onclick="toggleMenu()">Services</a>
+  <a href="../portfolio.html" onclick="toggleMenu()">Portfolio</a>
+  <a href="../products/lifeos.html" onclick="toggleMenu()" style="color:var(--gold);font-weight:700;">Products</a>
+  <a href="../case-studies/index.html" onclick="toggleMenu()">Case Studies</a>
+  <a href="../blog/index.html" onclick="toggleMenu()">Blog</a>
+  <a href="../pricing.html" onclick="toggleMenu()">Pricing</a>
+  <a href="../faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="../contact.html" onclick="toggleMenu()">Contact</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="https://wa.me/917878574692" class="mobile-menu-cta" target="_blank" onclick="toggleMenu()">💬 WhatsApp Us</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../products/lifeos.html">Products</a>
+  <span class="sep">›</span>
+  <span class="current">LifeOS</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="lifeos-hero">
+  <div class="lifeos-glow-v"></div>
+  <div class="lifeos-glow-g"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="lifeos-hero-inner">
+    <div>
+      <div class="lifeos-badge">🧬 A SiteLab India Product</div>
+      <h1>LifeOS — Your <span>Personal Operating System</span></h1>
+      <p class="lifeos-hero-sub">A premium productivity platform designed to help you organize your life, track goals, build powerful habits, and measure real progress — all in one elegant web interface. Built and maintained by SiteLab India.</p>
+      <div class="hero-pills">
+        <div class="hero-pill"><span>🧠</span> AI-Powered</div>
+        <div class="hero-pill"><span>📊</span> Goal Tracking</div>
+        <div class="hero-pill"><span>⚡</span> Life Management</div>
+      </div>
+      <div class="btn-group">
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary">Launch LifeOS 🚀</a>
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-secondary">Try LifeOS Free</a>
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-violet">Open App →</a>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:24px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--muted);"><span style="color:var(--green);">✓</span> Free forever</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--muted);"><span style="color:var(--green);">✓</span> No download needed</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--muted);"><span style="color:var(--green);">✓</span> Privacy first</div>
+      </div>
+    </div>
+    <div>
+      <div class="lifeos-hero-img-placeholder">
+        <div class="lifeos-app-icon">🧬</div>
+        <div class="lifeos-app-label">LIFEOS</div>
+        <div class="lifeos-app-sub">Personal Operating System</div>
+        <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-violet" style="margin-top:8px;font-size:0.82rem;padding:10px 24px;">Open Live App →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BANNER -->
+<div class="trust-banner">
+  <div class="trust-item"><span class="trust-icon">🏆</span><div class="trust-text"><h4>Built in Kota</h4><p>Made in Rajasthan</p></div></div>
+  <div class="trust-item"><span class="trust-icon">🆓</span><div class="trust-text"><h4>Free to Use</h4><p>No credit card needed</p></div></div>
+  <div class="trust-item"><span class="trust-icon">🔒</span><div class="trust-text"><h4>Privacy First</h4><p>Your data stays yours</p></div></div>
+  <div class="trust-item"><span class="trust-icon">⚡</span><div class="trust-text"><h4>Blazing Fast</h4><p>Optimized web app</p></div></div>
+  <div class="trust-item"><span class="trust-icon">🌐</span><div class="trust-text"><h4>Works Everywhere</h4><p>Any device, any browser</p></div></div>
+</div>
+
+<!-- FEATURES SECTION -->
+<section id="features">
+  <div class="section-center reveal">
+    <div class="section-tag">Core Features</div>
+    <h2 class="section-title">Everything You Need to <span>Run Your Life</span></h2>
+    <p class="section-sub">LifeOS bundles the most powerful productivity tools into one seamless experience — built for ambitious people who want real results, not just another to-do list.</p>
+  </div>
+  <div class="lifeos-feature-grid" style="margin-top:52px;">
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">📅</div>
+      <h3>Goal Tracking</h3>
+      <p>Set annual, monthly, and weekly goals with milestones and deadlines. Track progress visually with percentage completion bars. Know exactly where you stand on every goal at any given moment.</p>
+    </div>
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">✅</div>
+      <h3>Task Management</h3>
+      <p>Daily task lists with priority levels — High, Medium, Low. Organize by project, tag, or deadline. Never forget what matters most. Build a clear, distraction-free daily work queue.</p>
+    </div>
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">📊</div>
+      <h3>Habit Builder</h3>
+      <p>Build powerful daily routines with streak tracking and consistency scoring. Consistency creates transformation — LifeOS makes the compounding visible and keeps you accountable every single day.</p>
+    </div>
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">🧠</div>
+      <h3>AI Insights</h3>
+      <p>Smart suggestions based on your progress patterns, habit streaks, and goal completion rates. Work smarter, not harder. LifeOS learns what works for you and surfaces actionable recommendations.</p>
+    </div>
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">📈</div>
+      <h3>Progress Analytics</h3>
+      <p>Beautiful charts and dashboards showing your growth over time. Celebrate small wins and identify trends. Understand your productivity patterns and optimize your peak performance hours.</p>
+    </div>
+    <div class="lifeos-feature-card reveal">
+      <div class="lifeos-feature-icon">🔒</div>
+      <h3>Privacy First</h3>
+      <p>Your data stays on your account. No selling, no sharing, no third-party access — ever. LifeOS is built with privacy as a core architectural principle, not a marketing promise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section style="background:var(--bg2);padding:100px 6%;" id="benefits">
+  <div class="section-center reveal">
+    <div class="section-tag">Why LifeOS</div>
+    <h2 class="section-title">Three Pillars of a <span>Better Life</span></h2>
+    <p class="section-sub">LifeOS is built around three fundamental outcomes that actually move the needle in your life.</p>
+  </div>
+  <div class="benefit-grid" style="margin-top:52px;">
+    <div class="benefit-card clarity reveal">
+      <div class="benefit-num">01</div>
+      <div class="benefit-icon">🎯</div>
+      <h3>Clarity</h3>
+      <p>Most people fail not from laziness but from confusion about priorities. LifeOS gives you crystal clarity every single day — you wake up knowing your #1 priority and how it connects to your bigger goals. No more decision fatigue, no more spinning your wheels on unimportant things.</p>
+      <ul style="list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Daily priority surfacing</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Goal-to-task alignment</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Distraction-free interface</li>
+      </ul>
+    </div>
+    <div class="benefit-card consistency reveal">
+      <div class="benefit-num">02</div>
+      <div class="benefit-icon">🔄</div>
+      <h3>Consistency</h3>
+      <p>Motivation fades. Systems prevail. LifeOS builds systems that keep you moving even when motivation is zero. With streak tracking, habit chains, and daily check-ins, consistency becomes your default state — not your daily struggle. The compound effect of small daily wins is extraordinary.</p>
+      <ul style="list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Habit streak tracking</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ System-based workflows</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Consistency scoring</li>
+      </ul>
+    </div>
+    <div class="benefit-card growth reveal">
+      <div class="benefit-num">03</div>
+      <div class="benefit-icon">📈</div>
+      <h3>Growth</h3>
+      <p>What gets tracked gets improved. LifeOS tracks everything so you can see, measure, and accelerate your growth. Beautiful analytics show you where you've come from, where you're heading, and what to optimize. Data-driven self-improvement — without the overwhelm of complex tools.</p>
+      <ul style="list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Progress analytics dashboard</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Milestone celebrations</li>
+        <li style="color:var(--muted);font-size:0.88rem;">✓ Long-term trend reports</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS SECTION -->
+<section id="screenshots">
+  <div class="section-center reveal">
+    <div class="section-tag">App Preview</div>
+    <h2 class="section-title">See LifeOS <span>In Action</span></h2>
+    <p class="section-sub">A clean, premium interface designed to get out of your way and help you focus on what matters. No bloat. No clutter. Just results.</p>
+  </div>
+  <div class="screenshots-grid" style="margin-top:52px;">
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="screenshot-card reveal">
+      <span class="screenshot-icon">📅</span>
+      <span class="screenshot-label">Goal Dashboard</span>
+      <span class="screenshot-sub">Track goals &amp; milestones</span>
+      <span class="screenshot-open">Open App →</span>
+    </a>
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="screenshot-card reveal">
+      <span class="screenshot-icon">📊</span>
+      <span class="screenshot-label">Habit Tracker</span>
+      <span class="screenshot-sub">Streaks &amp; consistency</span>
+      <span class="screenshot-open">Open App →</span>
+    </a>
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="screenshot-card reveal">
+      <span class="screenshot-icon">📈</span>
+      <span class="screenshot-label">Analytics View</span>
+      <span class="screenshot-sub">Progress &amp; growth charts</span>
+      <span class="screenshot-open">Open App →</span>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary" style="font-size:1rem;padding:16px 40px;">
+      🚀 Launch the Live App — It's Free
+    </a>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<div class="pricing-teaser reveal">
+  <div class="free-badge">💸 Completely Free</div>
+  <div class="price-free">FREE</div>
+  <p style="color:var(--muted);font-size:1.1rem;max-width:520px;margin:0 auto 16px;font-weight:600;">LifeOS is currently free to use.</p>
+  <p style="color:var(--muted);font-size:0.92rem;max-width:600px;margin:0 auto;">Access all core productivity features including goal tracking, task management, habit building, and progress analytics at absolutely zero cost. No credit card. No trial period. Just open the app and start building the life you want.</p>
+  <div class="coming-badge">🚀 Premium features &amp; API integrations coming Q3 2026</div>
+  <div style="margin-top:36px;">
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-violet" style="font-size:1rem;padding:16px 40px;">Start Using LifeOS — It's Free 🚀</a>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<section id="faq" style="background:var(--bg2);">
+  <div class="section-center reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    <p class="section-sub">Everything you need to know about LifeOS before you dive in.</p>
+  </div>
+  <div class="faq-list" style="margin-top:52px;">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What is LifeOS?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">LifeOS is a premium personal productivity operating system built by SiteLab India's founder Kapil Ahir. It's a web-based platform that helps you manage goals, track tasks, build daily habits, and measure your real-life progress — all in one elegant, distraction-free interface. Think of it as your personal command centre for life.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is LifeOS completely free? Any hidden costs?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes, LifeOS is completely free to use with no hidden costs, no credit card requirements, and no trial period. All core features — goal tracking, task management, habit building, and progress analytics — are free. Premium features with advanced analytics, AI-powered insights, and API integrations are planned for Q3 2026 at a reasonable price. The core experience will always remain free.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Who is LifeOS designed for?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">LifeOS is designed for students who want to manage study goals and build academic habits, working professionals who need to organize tasks and track career growth, entrepreneurs who want clarity on business goals and personal productivity, and anyone who wants to systematically manage their life. If you believe in the power of systems over willpower, LifeOS is for you.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is my data safe on LifeOS?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. LifeOS is built with privacy as a core architectural principle. Your personal data, goals, tasks, and habit records belong entirely to you. We never sell, share, or monetize your personal information with any third parties. All data is handled with industry-standard security practices. Your life data is yours — period.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What platforms does LifeOS support?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">LifeOS is a Progressive Web App (PWA) that works on any modern browser — Chrome, Firefox, Safari, Edge — on any device including desktop computers, laptops, tablets (iPad), and smartphones (Android and iOS). No installation from the App Store or Play Store required. Simply open the URL and start using it immediately.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How is LifeOS connected to SiteLab India?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">LifeOS is SiteLab India's flagship internal product, designed and built by founder Kapil Ahir. It's not just a marketing website — it's a full-stack digital product with real user functionality, a database backend, and a scalable architecture. LifeOS demonstrates that SiteLab India can build not only premium marketing websites but complete digital products from scratch. Interested in a custom web app for your business? <a href="../contact.html" style="color:var(--gold);">Contact us</a> to discuss.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="lifeos-cta-strip reveal">
+  <div class="section-tag" style="display:inline-flex;margin-bottom:16px;">Get Started</div>
+  <h2>Start Using LifeOS <span>Today — It's Free</span></h2>
+  <p>Free forever. No credit card. No excuses. Your most organized life starts with one click.</p>
+  <div class="btn-group" style="justify-content:center;">
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-primary">Launch LifeOS 🚀</a>
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-secondary">Try LifeOS Free</a>
+    <a href="https://life-os-seven-sooty.vercel.app/" target="_blank" class="btn-violet">Open App →</a>
+  </div>
+  <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06);">
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:12px;">Built by SiteLab India. Want a custom web app or website for your business?</p>
+    <div class="btn-group" style="justify-content:center;margin-top:0;">
+      <a href="../contact.html" class="btn-secondary" style="font-size:0.85rem;padding:10px 22px;">💡 Get Website Quote</a>
+      <a href="https://wa.me/917878574692" target="_blank" class="btn-whatsapp" style="font-size:0.85rem;padding:10px 22px;">💬 WhatsApp Kapil</a>
+      <a href="../services.html" class="btn-secondary" style="font-size:0.85rem;padding:10px 22px;">⚡ Our Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- INTERNAL LINKS -->
+<section style="padding:50px 6%;background:var(--bg);">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:20px;">Explore more from SiteLab India</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <a href="../index.html" style="color:var(--gold);text-decoration:none;font-size:0.88rem;font-weight:600;">🏠 Home</a>
+      <a href="../services.html" style="color:var(--muted);text-decoration:none;font-size:0.88rem;">⚡ Services</a>
+      <a href="../blog/index.html" style="color:var(--muted);text-decoration:none;font-size:0.88rem;">📖 Blog</a>
+      <a href="../contact.html" style="color:var(--muted);text-decoration:none;font-size:0.88rem;">📞 Contact</a>
+      <a href="../portfolio.html" style="color:var(--muted);text-decoration:none;font-size:0.88rem;">🎨 Portfolio</a>
+      <a href="../faq.html" style="color:var(--muted);text-decoration:none;font-size:0.88rem;">❓ FAQ</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta-bar">
+  <a href="https://wa.me/917878574692" class="sticky-cta-btn wa" target="_blank"><span class="cta-icon">💬</span>WhatsApp</a>
+  <a href="tel:+917878574692" class="sticky-cta-btn call"><span class="cta-icon">📞</span>Call</a>
+  <a href="../contact.html" class="sticky-cta-btn quote"><span class="cta-icon">💡</span>Get Quote</a>
+  <a href="https://life-os-seven-sooty.vercel.app/" class="sticky-cta-btn book" target="_blank"><span class="cta-icon">🚀</span>LifeOS</a>
+</div>
+
+<a href="https://wa.me/917878574692?text=Hi%20Kapil%2C%20I%20found%20SiteLab%20India%20and%20want%20to%20discuss%20my%20website!" target="_blank" class="float-wa" aria-label="Chat on WhatsApp">💬</a>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="../index.html" class="footer-logo">Site<span>Lab</span> India</a>
+      <p class="footer-tagline">Premium website design, SEO, GEO optimization, and digital visibility systems for doctors, gyms, contractors, and ambitious businesses in Kota, Rajasthan.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/sitelabindia" target="_blank" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="https://wa.me/917878574692" target="_blank" class="social-btn" aria-label="WhatsApp">💬</a>
+      </div>
+      <div class="footer-badge">🏆 Based in Kota, Rajasthan</div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul class="footer-links">
+        <li><a href="../case-studies/index.html">Case Studies</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../products/lifeos.html">LifeOS Product</a></li>
+        <li><a href="../demos/index.html">Live Demos</a></li>
+        <li><a href="../sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Local SEO</h4>
+      <ul class="footer-links">
+        <li><a href="../local-seo/website-development-kota.html">Website Dev Kota</a></li>
+        <li><a href="../local-seo/web-designer-kota.html">Web Designer Kota</a></li>
+        <li><a href="../local-seo/seo-services-kota.html">SEO Services Kota</a></li>
+        <li><a href="../local-seo/doctor-website-kota.html">Doctor Website Kota</a></li>
+        <li><a href="../local-seo/gym-website-kota.html">Gym Website Kota</a></li>
+        <li><a href="../local-seo/real-estate-website-kota.html">Real Estate Kota</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 SiteLab India. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../sitemap.xml">Sitemap</a>
+    </div>
+    <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
